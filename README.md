@@ -297,3 +297,8 @@ deposit: an operator home path, a laboratory LAN address and a personal e-mail a
 matched as an exact literal and never as a pattern, so that no measured value can be altered
 by accident. No specimen identifier, job id, segment number, server revision, χ², thickness,
 roughness, density or angle is redacted anywhere in this deposit.
+
+## License
+
+Creative Commons Attribution 4.0 International (CC BY 4.0), the same terms as the procedure itself.
+Full text in `LICENSE`. Reuse and adapt freely, with credit.
