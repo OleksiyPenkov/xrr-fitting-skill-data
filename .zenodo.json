@@ -1,0 +1,40 @@
+{
+  "title": "Measured curves, fits, agent session transcripts and scripts for an LLM agent taught an XRR fitting procedure",
+  "upload_type": "dataset",
+  "access_right": "open",
+  "license": "cc-by-4.0",
+  "creators": [
+    {
+      "name": "Penkov, Oleksiy"
+    },
+    {
+      "name": "Peng, Jingjing"
+    },
+    {
+      "name": "Fu, Haoyu"
+    }
+  ],
+  "description": "The data behind \"Teaching a laboratory LLM agent a tacit procedure: an XRR fitting skill\".\n\nSix measured Co/C reflectivity curves, each with its instrument metadata and its raw diffractometer scan; the expert's withheld reference fits of the two qualification curves; the request, state and report files of every fit job of both campaigns, organised by the session names the paper uses; the complete agent session transcripts as cleaned JSONL and as readable Markdown; the written procedure and the prompt each of the eighteen test sessions actually received; the qualification and scoring scripts; and the figures.\n\nThe six Ru/C curves and the expert's Ru/C fits are not included. They belong to the companion paper's data deposit and are cited from it rather than duplicated.\n\nTranscript redactions are listed in transcripts/REDACTIONS.md. Checksums for every file are in SHA256SUMS.txt.",
+  "keywords": [
+    "X-ray reflectivity",
+    "multilayer mirror",
+    "curve fitting",
+    "large language model agent",
+    "agent transcripts",
+    "reproducibility"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.22851595",
+      "relation": "isSupplementedBy",
+      "scheme": "doi",
+      "resource_type": "dataset"
+    },
+    {
+      "identifier": "10.1107/S1600576724001031",
+      "relation": "cites",
+      "scheme": "doi",
+      "resource_type": "publication-article"
+    }
+  ]
+}
