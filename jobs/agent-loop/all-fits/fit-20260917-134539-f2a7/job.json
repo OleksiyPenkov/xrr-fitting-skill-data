@@ -1,0 +1,1 @@
+{"job_id":"fit-20260917-134539-f2a7","state":"cancelled","kind":"fit","iteration":136,"max_iterations":300,"best_value":24.8746,"elapsed_s":26.108,"last_message":"chi2 24.87, diversity 0.106","seed":980001,"started_utc":"2026-09-17T05:45:39.587Z","finished_utc":"2026-09-17T05:46:05.695Z"}

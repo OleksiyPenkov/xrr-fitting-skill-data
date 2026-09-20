@@ -1,0 +1,18 @@
+SERVER git_revision = 7f5b397
+SCHEMA scale  : Fixed multiplier applied to the measured intensities before the fit - the manual's "normalize" step, chosen by the caller (default 1). To choose it, compare the measured intensity with the calculated reflectivity of the start model (calc_reflectivity) at about theta 0.4 deg - past the critical angle, before the first Bragg peak - and take scale = calculated / measured there, so that the two curves agree at that angle. Do not normalize to the total-reflection region or to 1 / the maximum count. It is not fitted and the server does not choose it; the result echoes it, and measured.dat and fit.xrcx hold the scaled curve so that X-Ray Calc 3 shows the same data.
+SCHEMA smooth : {"type": "object", "properties": {"passes": {"type": "integer", "description": "How many times to smooth, 0 to 10 (default 0 = off). One pass is one click of Data - Smooth."}}, "required": [], "description": "Smooths the measured curve before the fit - the manual's \"smooth\" step, the same operation as X-Ray Calc 3's Data - Smooth: a moving average on the linear intensities (window 5, the mean of six adjacent points), once per pass. It also lowers and broadens any feature narrower than about six points, so it suits finely stepped scans. Off by default. The order is the manual's: \"scale\", then \"smooth\" over the whole curve, then the \"theta_range\" trim. The first points of the curve are left as they are and the last three are flattened, so trim both ends. The result echoes it, and measured.dat, fit.xrcx and a project saved from the job hold the curve as fitted; get_measurement alway
+1) DEFAULT OFF replay of b160: chi2 14.2139 (segment 9: 14.2139) echo {'passes': 0, 'window': 5} oob []
+   layers: [('C', 31.02, 5.02394, 1.64858), ('Co', 23.7488, 2.52831, 8.29073)]
+   segment 9: C 31.02 / 5.02394 / 1.64858 ; Co 23.7488 / 2.52831 / 8.29073
+   measured.dat identical to segment 9's: True
+2) passes=1: echo {'passes': 1, 'window': 5}
+   points server/python: 2567 2567
+   measured.dat vs python MovAvg(5) of scale x raw, trimmed: max rel diff 1.59e+24; theta max diff 0.00e+00
+   differs from the unsmoothed curve in 2453 of 2567 points
+   save_project curve = job's measured.dat: True
+3) {'passes': 11} -> {'ERROR': '{"code":"invalid_argument","message":"\\"smooth.passes\\" must be a whole number from 0 to 10","detail":"11"}'}
+3) {'passes': -1} -> {'ERROR': '{"code":"invalid_argument","message":"\\"smooth.passes\\" must be a whole number from 0 to 10","detail":"-1"}'}
+3) {'passes': 1.5} -> {'ERROR': '{"code":"invalid_argument","message":"\\"smooth.passes\\" must be a whole number from 0 to 10","detail":"1.5"}'}
+points 2567 | where python > 0: 2567 max rel diff 4.852177128950795e-08
+where python == 0: 0 server values there: []
+max abs diff overall 4.881896997765978e-09

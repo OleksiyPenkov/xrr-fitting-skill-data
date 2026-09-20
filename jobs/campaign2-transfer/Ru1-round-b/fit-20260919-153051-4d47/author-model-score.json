@@ -1,0 +1,42 @@
+{
+ "session_job": "fit-20260919-153051-4d47",
+ "reference": "260910B.xrcx",
+ "results": [
+  {
+   "label": "author model, session weights",
+   "job": "fit-20260919-153715-4ec0",
+   "chi2_start": 2.44428,
+   "chi2_after_1_iter": 2.08596,
+   "period_A": 0,
+   "orders_start": [],
+   "error": null
+  },
+  {
+   "label": "session model, session weights",
+   "job": "fit-20260919-153717-39f4",
+   "chi2_start": 1.31368,
+   "chi2_after_1_iter": 1.31367,
+   "period_A": 0,
+   "orders_start": [],
+   "error": null
+  },
+  {
+   "label": "author model, theta_weight 1",
+   "job": "fit-20260919-153717-0b81",
+   "chi2_start": 3.93944,
+   "chi2_after_1_iter": 3.93944,
+   "period_A": 0,
+   "orders_start": [],
+   "error": null
+  },
+  {
+   "label": "session model, theta_weight 1",
+   "job": "fit-20260919-153717-ca71",
+   "chi2_start": 5.95633,
+   "chi2_after_1_iter": 5.95413,
+   "period_A": 0,
+   "orders_start": [],
+   "error": null
+  }
+ ]
+}

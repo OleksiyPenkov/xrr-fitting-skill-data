@@ -1,0 +1,42 @@
+{
+ "session_job": "fit-20260919-082647-b913",
+ "reference": "260910B.xrcx",
+ "results": [
+  {
+   "label": "author model, session weights",
+   "job": "fit-20260919-083205-2181",
+   "chi2_start": 3.02223,
+   "chi2_after_1_iter": 2.6829,
+   "period_A": 0,
+   "orders_start": [],
+   "error": null
+  },
+  {
+   "label": "session model, session weights",
+   "job": "fit-20260919-083205-9eb3",
+   "chi2_start": 2.61418,
+   "chi2_after_1_iter": 2.61418,
+   "period_A": 0,
+   "orders_start": [],
+   "error": null
+  },
+  {
+   "label": "author model, theta_weight 1",
+   "job": "fit-20260919-083205-52ac",
+   "chi2_start": 3.76717,
+   "chi2_after_1_iter": 3.76717,
+   "period_A": 0,
+   "orders_start": [],
+   "error": null
+  },
+  {
+   "label": "session model, theta_weight 1",
+   "job": "fit-20260919-083206-5f40",
+   "chi2_start": 8.98539,
+   "chi2_after_1_iter": 7.71576,
+   "period_A": 0,
+   "orders_start": [],
+   "error": null
+  }
+ ]
+}

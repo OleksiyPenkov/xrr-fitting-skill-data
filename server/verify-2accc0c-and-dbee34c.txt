@@ -1,0 +1,13 @@
+Verification of X-Ray Calc 2accc0c by the orchestrator, 2026-09-18 22:11, over stdio on an isolated workdir with P2-05 (scratchpad xrc_verify_2accc0c.py):
+- describe_server git_revision 2accc0c; 17 tools (job_wait new)
+- fit_xrr scale "auto" on P2-05 with start C 32/4/2.0 + Co 18/4/8.0, dtheta 0.012: scale 7.9887e-7, scale_theta 0.20075, scale_counts 1074961, auto_theta_max 0.5 (the true maximum of the raw curve; the coding session's reference 7.9794e-7 is for the test-A start model)
+- job_wait wait_s 240 on a 15 x 200 fit: state finished, waited_s 2.27, one call
+- result.report keys: period_A, lambda, critical_angle_deg, background, orders, fringes, edge, bands, chi2, chi2_start, near_bounds, start; orders 0.919/1.18/1.108/0.778 at 0.9163/1.7772/2.6578/3.5322 (same positions as skilltest_compare.py); near_bounds flags Co density 6.04 at its 6.0 bound; files.report = jobs\<id>\report.json
+- DEFECT: report.fringes.contrast is global max/min over the whole inter-order range (627 measured / 289 calculated), not the adjacent-fringe contrast -> correction requested from the coding session 22:20
+- paired without profile: invalid_argument; profile + paired ["sigma","density"]: result.paired lists 4 entries, profiles only thickness, period_mode floating
+- calc_reflectivity peak summary on the start model: orders at 0.919/1.786/2.667/3.544/4.423 deg (satellite defect fixed)
+
+dbee34c (fringe correction), verified 22:40 over stdio (scratchpad xrc_verify_dbee34c.py), same short fit: git_revision dbee34c, 17 tools;
+report.fringes = between_deg [0.91625, 1.77725], count 18, measured.mean_contrast 4.697, calculated.mean_contrast 3.648 (15 x 200 fit),
+pairs at identical angles on both curves (first: 0.9808/1.0063 meas 6.57 calc 9.17). Orders unchanged. Coding session: 616 tests, smoke PASS,
+bit-identical to 7f5b397 without the new keys. ROUND 3 (T05c, T04c) launched 22:42 on this binary with max-turns 600.

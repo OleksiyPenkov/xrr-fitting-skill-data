@@ -1,0 +1,34 @@
+{
+ "session_job": "fit-20260918-222443-960a",
+ "reference": "author-fit-P2-05-Manual-2026-09-18.xrcx",
+ "range_2theta": [
+  0.48,
+  8.0
+ ],
+ "rows": [
+  [
+   "author's curve (his calc.dat), author's weights (TWChi 1)",
+   3.0761691225077215
+  ],
+  [
+   "session structure at his width 0.009, author's weights (TWChi 1)",
+   3.4445173018881174
+  ],
+  [
+   "session structure at session's dtheta 0.012, author's weights (TWChi 1)",
+   3.133941950906697
+  ],
+  [
+   "author's curve (his calc.dat), skill's weights (theta_weight 1)",
+   3.0761691225077215
+  ],
+  [
+   "session structure at his width 0.009, skill's weights (theta_weight 1)",
+   3.4445173018881174
+  ],
+  [
+   "session structure at session's dtheta 0.012, skill's weights (theta_weight 1)",
+   3.133941950906697
+  ]
+ ]
+}

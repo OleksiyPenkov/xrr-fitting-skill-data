@@ -1,0 +1,21 @@
+Orchestrator's verification of X-Ray Calc 2643c4c, 2026-09-16 16:24-16:27
+Binary D:\DelphiProjects\X-RayCalc\X-RayCalc3_Working\_Out\BIN\XRC_MCP.exe (built 16:18), driven over stdio by
+scratchpad xrc_verify.py in an isolated workdir holding only inbox\P2-02\xrr.dat + meta.json (copies of exp-03's).
+describe_server: /server/git_revision = 2643c4c, /server/xraycalc3_exe_version = 3.8.0.850,
+/fit/engine = GUI LFPSO (TLFPSO_Periodic / TLFPSO_Poly).
+Each request below is the original request.json of the segment-7 job (same seed, bounds, optimizer settings),
+with points_inline_max 0. "my_bounds_check" is an independent comparison of fitted_structure against bounds_used.
+
+### fit-20260916-141539-e49e (old: C density 3.259 > 3.2, Co density 0.437 < 2)
+{"job_id": "fit-20260916-162409-54c8", "seed": 910003, "chi2": 3.57502, "chi2_recalc": 3.57502, "chi2_start": 13.2896, "iterations_run": 400, "engine": "TLFPSO_Periodic", "out_of_bounds": [], "fitted_structure": {"substrate": {"material": "SiO2", "sigma": 5, "density": 2.65}, "stacks": [{"N": 20, "layers": [{"material": "C", "thickness": 25.2477, "sigma": 9.14744, "density": 3.19972}, {"material": "Co", "thickness": 2.70479, "sigma": 5.52224, "density": 2.00587}]}]}, "my_bounds_check": "inside"}
+### fit-20260916-141845-1763 (old: four values outside)
+{"job_id": "fit-20260916-162515-39ee", "seed": 930002, "chi2": 0.355184, "chi2_recalc": 0.355184, "chi2_start": 7.41327, "iterations_run": 400, "engine": "TLFPSO_Periodic", "out_of_bounds": [], "fitted_structure": {"substrate": {"material": "SiO2", "sigma": 5, "density": 2.65}, "stacks": [{"N": 20, "layers": [{"material": "C", "thickness": 24.8554, "sigma": 5.96796, "density": 2.5998}, {"material": "Co", "thickness": 3.0, "sigma": 7.35388, "density": 6.00007}]}]}, "my_bounds_check": "inside"}
+### fit-20260916-142030-f2d6 (old: Co thickness -0.743)
+{"job_id": "fit-20260916-162535-cbea", "seed": 940001, "chi2": 5.05606, "chi2_recalc": 5.05606, "chi2_start": 8.74775, "iterations_run": 300, "engine": "TLFPSO_Periodic", "out_of_bounds": [], "fitted_structure": {"substrate": {"material": "SiO2", "sigma": 5, "density": 2.65}, "stacks": [{"N": 20, "layers": [{"material": "C", "thickness": 26.9996, "sigma": 5.95226, "density": 1.90177}, {"material": "Co", "thickness": 0.828019, "sigma": 11.9999, "density": 3.84408}]}]}, "my_bounds_check": "inside"}
+### fit-20260916-142234-c3d5 (old: five values outside, chi2 1.937)
+{"job_id": "fit-20260916-162607-50ac", "seed": 950002, "chi2": 2.16926, "chi2_recalc": 2.16926, "chi2_start": 2.7329, "iterations_run": 150, "engine": "TLFPSO_Periodic", "out_of_bounds": [], "fitted_structure": {"substrate": {"material": "SiO2", "sigma": 5, "density": 2.65}, "stacks": [{"N": 20, "layers": [{"material": "C", "thickness": 25.3871, "sigma": 9.87474, "density": 2.74275}, {"material": "Co", "thickness": 2.40001, "sigma": 7.79814, "density": 8.89985}]}]}, "my_bounds_check": "inside"}
+### fit-20260916-142326-7a33 (control; old result inside bounds: chi2 1.9929, C 25.9027/9.45357/2.8946, Co 1.87858/7.57025/8.99894)
+{"job_id": "fit-20260916-162619-14dd", "seed": 960001, "chi2": 1.99223, "chi2_recalc": 1.99223, "chi2_start": 2.67404, "iterations_run": 200, "engine": "TLFPSO_Periodic", "out_of_bounds": [], "fitted_structure": {"substrate": {"material": "SiO2", "sigma": 5, "density": 2.65}, "stacks": [{"N": 20, "layers": [{"material": "C", "thickness": 25.9252, "sigma": 9.43261, "density": 2.89474}, {"material": "Co", "thickness": 1.85846, "sigma": 7.55136, "density": 8.99903}]}]}, "my_bounds_check": "inside"}
+
+Conclusion: the four defects are gone with their original seeds; the control fit drifts slightly (not bit-identical),
+chi2_start identical; question sent to the coding session 16:28.

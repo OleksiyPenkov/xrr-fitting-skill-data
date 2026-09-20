@@ -1,0 +1,34 @@
+{
+ "session_job": "fit-20260919-102224-f649",
+ "reference": "260909A.xrcx",
+ "range_2theta": [
+  0.5,
+  12.0
+ ],
+ "rows": [
+  [
+   "author's curve (his calc.dat), author's weights (TWChi 0)",
+   1.9068733786219385
+  ],
+  [
+   "session structure at his width 0.014, author's weights (TWChi 0)",
+   2.2482261263527463
+  ],
+  [
+   "session structure at session's dtheta 0.012, author's weights (TWChi 0)",
+   2.4409224968750456
+  ],
+  [
+   "author's curve (his calc.dat), skill's weights (theta_weight 1)",
+   14.589779251435212
+  ],
+  [
+   "session structure at his width 0.014, skill's weights (theta_weight 1)",
+   14.714448265539433
+  ],
+  [
+   "session structure at session's dtheta 0.012, skill's weights (theta_weight 1)",
+   16.6847005375712
+  ]
+ ]
+}

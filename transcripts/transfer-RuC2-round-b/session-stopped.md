@@ -1,0 +1,2801 @@
+# transfer-RuC2-round-b / session-stopped
+
+_Session start. 17 tools available._
+
+## assistant
+Starting with section 1 of the procedure: list the inbox, read the curve, and check the server description (for `scale_auto` support).
+
+**-> mcp__xrc__list_measurements**
+```json
+{
+  "specimen": "260908A"
+}
+```
+
+**<- result**
+```
+{"inbox":"inbox\\","specimens":[{"specimen":"260908A","files":[{"name":"xrr.dat","id":"260908A/xrr.dat","size":71799,"sha256":"7827535cfcf96b732b2270e27ccef6c736ab928e10c1cbcf0707515cfd58f768","modified_utc":"2026-09-19T00:15:21Z"}],"meta":{"specimen":"260908A","specimen_id_on_instrument":"260908A","lambda":1.540598,"wavelength_note":"Cu K-alpha as recorded in the instrument file: K-alpha1 1.5405980 A, K-alpha2 1.5444260 A with ratio K-alpha2/K-alpha1 0.5000, K-beta 1.3922500 A. No monochromator; the incident optic is a parallel-beam mirror.","theta_unit":"2theta","columns":"2theta_deg intensity_counts","date":"2026-09-09","scan_start":"2026-09-09T10:54:31+08:00","scan_end":"2026-09-09T11:12:14+08:00","instrument":"PANalytical Empyrean, Cu LFF HR tube 40.0 kV 20.0 mA, incident parallel-beam W/Si graded parabolic mirror (acceptance 0.800 deg), fixed divergence slit (height 0.05 as recorded in the file), Soller slits 0.0400 rad on both sides, PIXcel3D-Medipix3 1x1 detector in Receiving slit mode (1 equatorial x 255 axial channels), goniometer radius 240.00 mm, Chi-Phi-z stage","scan":{"axis":"2Theta-Omega","mode":"continuous","status_in_file":"Completed","status_note":"The scan ran to the end of its program.","two_theta_start_deg":0.0955,"two_theta_end_deg":15.9985,"step_deg":0.003,"points":5302,"counting_time_s_per_point":0.176,"intensity_unit":"counts"},"detector_phd":{"lower_level_percent":25.0,"upper_level_percent":100.0},"sample_offset_deg":{"2theta":0.0011,"omega":0.0431},"stage":{"phi_deg":0.0,"chi_deg":-0.14,"z_mm":7.202},"raw_file":"260908A.xrdml","processing":"none: the intensities are as exported by the instrument software; no background, footprint or absorption correction"}}],"loose_files":0}
+```
+
+**-> mcp__xrc__get_measurement**
+```json
+{
+  "measurement_id": "260908A/xrr.dat",
+  "max_points": 2000
+}
+```
+
+**-> mcp__xrc__describe_server**
+```json
+{}
+```
+
+**<- result**
+```
+{"measurement_id":"260908A/xrr.dat","file":"inbox\\260908A\\xrr.dat","points":5302,"points_returned":1768,"theta_range":[0.04775,7.99925],"columns":"2theta,intensity","converted_from_2theta":true,"theta_unit":"2theta","theta_unit_assumed":false,"lambda":1.5406,"meta":{"specimen":"260908A","specimen_id_on_instrument":"260908A","lambda":1.540598,"wavelength_note":"Cu K-alpha as recorded in the instrument file: K-alpha1 1.5405980 A, K-alpha2 1.5444260 A with ratio K-alpha2/K-alpha1 0.5000, K-beta 1.3922500 A. No monochromator; the incident optic is a parallel-beam mirror.","theta_unit":"2theta","columns":"2theta_deg intensity_counts","date":"2026-09-09","scan_start":"2026-09-09T10:54:31+08:00","scan_end":"2026-09-09T11:12:14+08:00","instrument":"PANalytical Empyrean, Cu LFF HR tube 40.0 kV 20.0 mA, incident parallel-beam W/Si graded parabolic mirror (acceptance 0.800 deg), fixed divergence slit (height 0.05 as recorded in the file), Soller slits 0.0400 rad on both sides, PIXcel3D-Medipix3 1x1 detector in Receiving slit mode (1 equatorial x 255 axial channels), goniometer radius 240.00 mm, Chi-Phi-z stage","scan":{"axis":"2Theta-Omega","mode":"continuous","status_in_file":"Completed","status_note":"The scan ran to the end of its program.","two_theta_start_deg":0.0955,"two_theta_end_deg":15.9985,"step_deg":0.003,"points":5302,"counting_time_s_per_point":0.176,"intensity_unit":"counts"},"detector_phd":{"lower_level_percent":25.0,"upper_level_percent":100.0},"sample_offset_deg":{"2theta":0.0011,"omega":0.0431},"stage":{"phi_deg":0.0,"chi_deg":-0.14,"z_mm":7.202},"raw_file":"260908A.xrdml","processing":"none: the intensities are as exported by the instrument software; no background, footprint or absorption correction"},"header":[],"curve":[[0.04775,703530],[0.05225,765942],[0.05675,822068],[0.06125,871393],[0.06575,921311],[0.07025,968284],[0.07475,1010967],[0.07925,1051719],[0.08375,1088928],[0.08825,1127105],[0.09275,1159436],[0.09725,1191133],[0.10175,1221776],[0.10625,1246935],[0.11075,1271434],[0.11525,1297395],[0.11975,1314088],[0.12425,1332809],[0.12875,1353921],[0.13325,1370235],[0.13775,1383670],[0.14225,1398089],[0.14675,1412915],[0.15125,1427590],[0.15575,1439294],[0.16025,1450370],[0.16475,1457845],[0.16925,1467888],[0.17375,1474925],[0.17825,1483987],[0.18275,1486618],[0.18725,1493229],[0.19175,1498366],[0.19625,1499826],[0.20075,1500713],[0.20525,1500821],[0.20975,1500967],[0.21425,1497082],[0.21875,1493081],[0.22325,1487140],[0.22775,1477583],[0.23225,1466684],[0.23675,1452263],[0.24125,1429501],[0.24575,1396262],[0.25025,1344062],[0.25475,1259260],[0.25925,1105838],[0.26375,899957],[0.26825,700788],[0.27275,545316],[0.27725,441119],[0.28175,370762],[0.28625,316493],[0.29075,275082],[0.29525,243154],[0.29975,212359],[0.30425,196230],[0.30875,175677],[0.31325,163075],[0.31775,151038],[0.32225,138308],[0.32675,137011],[0.33125,123801],[0.33575,124519],[0.34025,120257],[0.34475,109356],[0.34925,120703],[0.35375,106991],[0.35825,109658],[0.36275,120760],[0.36725,101296],[0.37175,120779],[0.37625,121625],[0.38075,103721],[0.38525,129725],[0.38975,121320],[0.39425,109854],[0.39875,141499],[0.40325,123313],[0.40775,119267],[0.41225,150130],[0.41675,128936],[0.42125,127596],[0.42575,159755],[0.43025,135470],[0.43475,133951],[0.43925,167136],[0.44375,143089],[0.44825,137333],[0.45275,172348],[0.45725,150070],[0.46175,138400],[0.46625,173712],[0.47075,155539],[0.47525,137006],[0.47975,171674],[0.48425,158771],[0.48875,131279],[0.49325,163318],[0.49775,160253],[0.50225,125228],[0.50675,150154],[0.51125,156855],[0.51575,117514],[0.52025,136802],[0.52475,155760],[0.52925,114910],[0.53375,128216],[0.53825,163514],[0.54275,125932],[0.54725,129165],[0.55175,191535],[0.55625,170431],[0.56075,190263],[0.56525,309955],[0.56975,375968],[0.57425,667523],[0.57875,1214511],[0.58325,1557085],[0.58775,1619429],[0.59225,1596416],[0.59675,1530490],[0.60125,1421548],[0.60575,1239603],[0.61025,949387],[0.61475,632674],[0.61925,396825],[0.62375,2649
+```
+
+**<- result**
+```
+{"server":{"name":"xrc","version":"1.0.0.0","git_revision":"2021a9e","engine":"X-Ray Calc 3 (Shared/Math, XRayCalc3/LFPSO, Shared/Universal) compiled into this binary","xraycalc3_exe_version":"3.8.1.870"},"henke":{"path":"D:\\SoftwareStorage\\X-RayCalc3\\Henke","table_count":147,"newest_file_utc":"2026-04-24T01:09:34Z","source_note":"X-Ray Calc .bin conversions of CXRO Henke f1/f2 tables; provenance not embedded - see open question 4"},"xrf_lines_file":"D:\\DelphiProjects\\X-RayCalc\\X-RayCalc3_Working\\Shared\\Universal\\xrf_lines.json","templates_file":null,"units":{"length":"angstrom","density":"g/cm3","angle":"degrees, theta (grazing incidence, NOT 2theta)","energy":"eV, lambda = 12398.42 / E","engine_table_constant":"12398.6 (math_globals.H, Henke interpolation only)","numeric_precision":"Numeric results are rounded to 6 significant digits."},"material_syntax":"Henke table base name, case-insensitive (Ru, C, B4C, SiO2, RuB2, ...). list_materials enumerates them. Composition-mixing strings such as W0.7Si0.3 are not supported in v1.","structure_order":"stacks are listed from substrate to surface; within a stack, layers are ordered from the surface downwards - layers[0] is nearest the surface (under the cap), the last entry is nearest the substrate; cap is the top layer; buffer sits between substrate and the first stack","limits":{"max_layers":20000,"max_points":100000,"max_inline_points":2000,"max_jobs_queued":16,"jobs_concurrent":1,"max_lines":16,"max_pool_elements":16},"workdir":{"root":"D:\\MultilayerLab\\Papers\\LLM-XRay-Optics-Lab\\experiments\\skill-dev-2026-09-18\\workdir-RuC-260908A-b","projects":"projects\\","jobs":"jobs\\<job_id>\\","inbox":"inbox\\<specimen>\\ (read-only)","log":"log\\calls.jsonl"},"fit":{"engine":"GUI LFPSO (TLFPSO_Periodic / TLFPSO_Poly)","chi2":"1000/(n-1) * sum(((log10 I_meas - log10 R_calc)/log10 R_calc)^2 * w_point * w_theta) over the points i = tail .. n-2-tail of the n measured points, skipping any with R_calc = 0; tail is the half-width in points of the resolution convolution (0 when resolution = 0); w_point = I/movavg(I) where that ratio exceeds 3 and 1 otherwise (point_weight=true); w_theta from theta_weight 0..5 as in the GUI. This is TCalc.CalcChiSquare, the number X-Ray Calc 3 displays.","free_parameters":"layer thickness/sigma/density only. The GUI engine keeps the substrate fixed (TLFPSO_BASE.FillModel copies Subs.P verbatim; only stack layers are in the particle vector), so substrate sigma and density cannot be fitted - and the substrate density is ALWAYS the Henke bulk value, because TLayeredModel computes the substrate permittivity from the table and ignores a density supplied for it. The engine has no scale, background or resolution parameters either; asking for any of them is refused with error not_fittable.","top_k_rule":"Candidates are ranked by figure of merit (best first) and a candidate is kept only when it differs from every candidate already kept: a different dominant material pair, or a period more than 5% away, or a gamma more than 0.05 away, or a different rounded number of periods. Entry 0 is always the global best."},"errors":["invalid_argument","invalid_request","tool_not_found","path_outside_workdir","inbox_readonly","not_found","invalid_structure","unknown_material","not_fittable","already_exists","unsupported_project","job_unknown","job_not_finished","job_failed","job_cancelled","too_many_jobs","optimizer_error","server_busy","internal"],"tools":[{"name":"describe_server","summary":"Describes this server: what it is, how it was built and what it can do."},{"name":"list_materials","summary":"Lists the Henke tables this server can use, optionally filtered by an element pool."},{"name":"optical_constants","summary":"Optical constants of one material at one wavelength: delta and beta of n = 1 - delta + i*beta, plus n and k and the nearby absorption edges."},{"name":"list_templates","summary":"Lists the multilayer design templates this server was started with, opti
+```
+
+> **thinking**
+> The peak spacing suggests a period of ~82.5 Å rather than the nominal 68.5 Å, with order 7 nearly absent. I'll check material densities and verify what period the peak positions actually imply.
+
+**-> mcp__xrc__list_materials**
+```json
+{
+  "filter": [
+    "Ru",
+    "C",
+    "Si",
+    "O"
+  ]
+}
+```
+
+**<- result**
+```
+{"count":8,"materials":[{"name":"C","formula":{"C":1},"is_element":true,"bulk_density":2.266,"atomic_mass":12.011},{"name":"O","formula":{"O":1},"is_element":true,"bulk_density":1,"atomic_mass":15.994},{"name":"RU","formula":{"Ru":1},"is_element":true,"bulk_density":12.437,"atomic_mass":101.07},{"name":"Ru2Si3","formula":{"Ru":2,"Si":3},"is_element":false,"bulk_density":6.96,"atomic_mass":57.2793},{"name":"RuSi","formula":{"Ru":1,"Si":1},"is_element":false,"bulk_density":7.05,"atomic_mass":64.5778},{"name":"Si","formula":{"Si":1},"is_element":true,"bulk_density":2.332,"atomic_mass":28.0855},{"name":"SiC","formula":{"Si":1,"C":1},"is_element":false,"bulk_density":3,"atomic_mass":20.05},{"name":"SiO2","formula":{"Si":1,"O":2},"is_element":false,"bulk_density":2.65,"atomic_mass":20.02}]}
+```
+
+> **thinking**
+> Ru density bounds work out to 8.706–12.437 g/cm³. I'll now run two trial models at d = 82.5 Å (Ru 15 and Ru 12) to compare their Bragg peaks against the measured ones, suppressing inline curves.
+
+**-> mcp__xrc__calc_reflectivity**
+```json
+{
+  "structure": {
+    "substrate": {
+      "material": "SiO2",
+      "density": 2.65,
+      "sigma": 3.8
+    },
+    "buffer": {
+      "material": "Ru",
+      "thickness": 200,
+      "sigma": 4,
+      "density": 11.5
+    },
+    "stacks": [
+      {
+        "N": 30,
+        "layers": [
+          {
+            "material": "Ru",
+            "thickness": 15,
+            "sigma": 4,
+            "density": 11.5
+          },
+          {
+            "material": "C",
+            "thickness": 67.5,
+            "sigma": 4,
+            "density": 2
+          }
+        ]
+      },
+      {
+        "N": 1,
+        "layers": [
+          {
+            "material": "C",
+            "thickness": 15,
+            "sigma": 3,
+            "density": 0.9
+          }
+        ]
+      }
+    ]
+  },
+  "lambda": 1.5406,
+  "polarization": "s",
+  "delta_theta": 0.012,
+  "theta_min": 0.15,
+  "theta_max": 6.3,
+  "points": 4100,
+  "max_inline_points": 1,
+  "r_min": 1e-07
+}
+```
+
+**<- result**
+```
+{"job_id":"calc-20260919-111049-b027","lambda_used":1.5406,"energy_eV":8047.79,"theta_unit":"deg theta","polarization":"s","delta_theta":0.012,"structure_used":{"substrate":{"material":"SiO2","sigma":3.8,"density":2.65},"stacks":[{"N":30,"layers":[{"material":"Ru","thickness":15,"sigma":4,"density":11.5},{"material":"C","thickness":67.5,"sigma":4,"density":2}]},{"N":1,"layers":[{"material":"C","thickness":15,"sigma":3,"density":0.9}]}],"buffer":{"material":"Ru","thickness":200,"sigma":4,"density":11.5}},"file":"jobs\\calc-20260919-111049-b027\\curve.dat","points":4100,"curve":null,"critical_angle_deg":0.268108,"bragg_peaks":[{"order":1,"theta_deg":0.588107,"r_peak":0.860863,"fwhm_deg":0.0496141},{"order":2,"theta_deg":1.10273,"r_peak":0.641904,"fwhm_deg":0.0256948},{"order":3,"theta_deg":1.62786,"r_peak":0.209103,"fwhm_deg":0.0202866},{"order":4,"theta_deg":2.15749,"r_peak":0.0271902,"fwhm_deg":0.0188737},{"order":5,"theta_deg":2.69012,"r_peak":0.000782513,"fwhm_deg":0.0191833},{"order":6,"theta_deg":3.22275,"r_peak":0.000108466,"fwhm_deg":0.0183508},{"order":7,"theta_deg":3.75688,"r_peak":0.000129034,"fwhm_deg":0.0193758},{"order":8,"theta_deg":4.29251,"r_peak":3.4409E-5,"fwhm_deg":0.0189569},{"order":9,"theta_deg":4.82814,"r_peak":3.83724E-6,"fwhm_deg":0.0190189}],"period_A":82.5,"n_periods":30}
+```
+
+**-> mcp__xrc__calc_reflectivity**
+```json
+{
+  "structure": {
+    "substrate": {
+      "material": "SiO2",
+      "density": 2.65,
+      "sigma": 3.8
+    },
+    "buffer": {
+      "material": "Ru",
+      "thickness": 200,
+      "sigma": 4,
+      "density": 11.5
+    },
+    "stacks": [
+      {
+        "N": 30,
+        "layers": [
+          {
+            "material": "Ru",
+            "thickness": 12,
+            "sigma": 4,
+            "density": 11.5
+          },
+          {
+            "material": "C",
+            "thickness": 70.5,
+            "sigma": 4,
+            "density": 2
+          }
+        ]
+      },
+      {
+        "N": 1,
+        "layers": [
+          {
+            "material": "C",
+            "thickness": 15,
+            "sigma": 3,
+            "density": 0.9
+          }
+        ]
+      }
+    ]
+  },
+  "lambda": 1.5406,
+  "polarization": "s",
+  "delta_theta": 0.012,
+  "theta_min": 0.15,
+  "theta_max": 6.3,
+  "points": 4100,
+  "max_inline_points": 1,
+  "r_min": 1e-07
+}
+```
+
+**<- result**
+```
+{"job_id":"calc-20260919-111053-e5d9","lambda_used":1.5406,"energy_eV":8047.79,"theta_unit":"deg theta","polarization":"s","delta_theta":0.012,"structure_used":{"substrate":{"material":"SiO2","sigma":3.8,"density":2.65},"stacks":[{"N":30,"layers":[{"material":"Ru","thickness":12,"sigma":4,"density":11.5},{"material":"C","thickness":70.5,"sigma":4,"density":2}]},{"N":1,"layers":[{"material":"C","thickness":15,"sigma":3,"density":0.9}]}],"buffer":{"material":"Ru","thickness":200,"sigma":4,"density":11.5}},"file":"jobs\\calc-20260919-111053-e5d9\\curve.dat","points":4100,"curve":null,"critical_angle_deg":0.25652,"bragg_peaks":[{"order":1,"theta_deg":0.585106,"r_peak":0.85434,"fwhm_deg":0.0423501},{"order":2,"theta_deg":1.09973,"r_peak":0.601839,"fwhm_deg":0.0241345},{"order":3,"theta_deg":1.62636,"r_peak":0.213723,"fwhm_deg":0.0202505},{"order":4,"theta_deg":2.15599,"r_peak":0.0440698,"fwhm_deg":0.0189874},{"order":5,"theta_deg":2.68862,"r_peak":0.00502415,"fwhm_deg":0.0192284},{"order":6,"theta_deg":3.22275,"r_peak":0.000254716,"fwhm_deg":0.0189471},{"order":7,"theta_deg":3.75388,"r_peak":5.01347E-7,"fwhm_deg":0.0249346},{"order":8,"theta_deg":4.29101,"r_peak":8.7271E-6,"fwhm_deg":0.0185547},{"order":9,"theta_deg":4.82664,"r_peak":2.99735E-6,"fwhm_deg":0.0194931},{"order":10,"theta_deg":5.36527,"r_peak":5.0775E-7,"fwhm_deg":0.0204699}],"period_A":82.5,"n_periods":30}
+```
+
+> **thinking**
+> The d=82.5 Å model matches measured peaks well, with Ru≈12 Å reproducing the observed order-7 absence and orders 4–6 fall-off, unlike Ru=15 Å; I'll set expected values from these peak positions rather than the nominal design and now build the section 3 sensitivity map, testing one variant change at a time with full-range, order 2–3, and edge-window Bragg summaries.
+
+**-> mcp__xrc__calc_reflectivity**
+```json
+{
+  "structure": {
+    "substrate": {
+      "material": "SiO2",
+      "density": 2.65,
+      "sigma": 3.8
+    },
+    "buffer": {
+      "material": "Ru",
+      "thickness": 200,
+      "sigma": 4,
+      "density": 11.5
+    },
+    "stacks": [
+      {
+        "N": 30,
+        "layers": [
+          {
+            "material": "Ru",
+            "thickness": 12,
+            "sigma": 4,
+            "density": 11.5
+          },
+          {
+            "material": "C",
+            "thickness": 70.5,
+            "sigma": 4,
+            "density": 2
+          }
+        ]
+      },
+      {
+        "N": 1,
+        "layers": [
+          {
+            "material": "C",
+            "thickness": 15,
+            "sigma": 3,
+            "density": 0.9
+          }
+        ]
+      }
+    ]
+  },
+  "lambda": 1.5406,
+  "polarization": "s",
+  "delta_theta": 0.012,
+  "theta_min": 1.2,
+  "theta_max": 1.55,
+  "points": 71
+}
+```
+
+**-> mcp__xrc__calc_reflectivity**
+```json
+{
+  "structure": {
+    "substrate": {
+      "material": "SiO2",
+      "density": 2.65,
+      "sigma": 3.8
+    },
+    "buffer": {
+      "material": "Ru",
+      "thickness": 200,
+      "sigma": 4,
+      "density": 11.5
+    },
+    "stacks": [
+      {
+        "N": 30,
+        "layers": [
+          {
+            "material": "Ru",
+            "thickness": 12,
+            "sigma": 4,
+            "density": 11.5
+          },
+          {
+            "material": "C",
+            "thickness": 70.5,
+            "sigma": 4,
+            "density": 2
+          }
+        ]
+      },
+      {
+        "N": 1,
+        "layers": [
+          {
+            "material": "C",
+            "thickness": 15,
+            "sigma": 3,
+            "density": 0.9
+          }
+        ]
+      }
+    ]
+  },
+  "lambda": 1.5406,
+  "polarization": "s",
+  "delta_theta": 0.012,
+  "theta_min": 0.22,
+  "theta_max": 0.3,
+  "points": 17
+}
+```
+
+**<- result**
+```
+{"job_id":"calc-20260919-111223-eea0","lambda_used":1.5406,"energy_eV":8047.79,"theta_unit":"deg theta","polarization":"s","delta_theta":0.012,"structure_used":{"substrate":{"material":"SiO2","sigma":3.8,"density":2.65},"stacks":[{"N":30,"layers":[{"material":"Ru","thickness":12,"sigma":4,"density":11.5},{"material":"C","thickness":70.5,"sigma":4,"density":2}]},{"N":1,"layers":[{"material":"C","thickness":15,"sigma":3,"density":0.9}]}],"buffer":{"material":"Ru","thickness":200,"sigma":4,"density":11.5}},"file":"jobs\\calc-20260919-111223-eea0\\curve.dat","points":71,"curve":[[1.2,0.00217554],[1.205,0.00021595],[1.21,0.00223016],[1.215,0.00235178],[1.22,0.000242014],[1.225,0.00118617],[1.23,0.002083],[1.235,0.000448549],[1.24,0.000611701],[1.245,0.00167704],[1.25,0.000566506],[1.255,0.000328681],[1.26,0.0013168],[1.265,0.000648937],[1.27,0.000175122],[1.275,0.00107334],[1.28,0.000716186],[1.285,9.35502E-5],[1.29,0.000905331],[1.295,0.000514454],[1.3,0.000620973],[1.305,0.00057613],[1.31,0.00048411],[1.315,0.000589389],[1.32,0.000602395],[1.325,0.000482538],[1.33,0.000551173],[1.335,0.000620277],[1.34,0.000494748],[1.345,0.000490438],[1.35,0.000587995],[1.355,0.000495847],[1.36,0.000426149],[1.365,0.000519034],[1.37,0.000482595],[1.375,0.000368999],[1.38,0.00041721],[1.385,0.000440127],[1.39,0.000336064],[1.395,0.000325153],[1.4,0.000370023],[1.405,0.000310785],[1.41,0.000263018],[1.415,0.0002938],[1.42,0.000290468],[1.425,0.000253588],[1.43,0.000252048],[1.435,0.000276927],[1.44,0.00029015],[1.445,0.000272303],[1.45,0.000284054],[1.455,0.000358186],[1.46,0.000272506],[1.465,0.000291261],[1.47,0.000301406],[1.475,0.000287561],[1.48,0.000330695],[1.485,0.000358709],[1.49,0.000340249],[1.495,0.000402385],[1.5,0.000472856],[1.505,0.000446682],[1.51,0.000502091],[1.515,0.000630334],[1.52,0.000620826],[1.525,0.000634456],[1.53,0.000814679],[1.535,0.000861855],[1.54,0.000818736],[1.545,0.00100882],[1.55,0.00117524]],"critical_angle_deg":0.25652,"bragg_peaks":[],"period_A":82.5,"n_periods":30}
+```
+
+**<- result**
+```
+{"code":"invalid_argument","message":"Too few points for a convolved scan: the beam-divergence convolution needs a window of +/-0.1 degree, which does not fit this grid. Increase \"points\" or narrow the theta range.","detail":"points=17, theta range=0.08 deg, step=0.004706 deg: the convolution window is 43 of the 17 points"}
+```
+
+**-> mcp__xrc__calc_reflectivity**
+```json
+{
+  "structure": {
+    "substrate": {
+      "material": "SiO2",
+      "density": 2.65,
+      "sigma": 3.8
+    },
+    "buffer": {
+      "material": "Ru",
+      "thickness": 200,
+      "sigma": 4,
+      "density": 11.5
+    },
+    "stacks": [
+      {
+        "N": 30,
+        "layers": [
+          {
+            "material": "Ru",
+            "thickness": 12.24,
+            "sigma": 4,
+            "density": 11.5
+          },
+          {
+            "material": "C",
+            "thickness": 71.91,
+            "sigma": 4,
+            "density": 2
+          }
+        ]
+      },
+      {
+        "N": 1,
+        "layers": [
+          {
+            "material": "C",
+            "thickness": 15,
+            "sigma": 3,
+            "density": 0.9
+          }
+        ]
+      }
+    ]
+  },
+  "lambda": 1.5406,
+  "polarization": "s",
+  "delta_theta": 0.012,
+  "theta_min": 0.15,
+  "theta_max": 6.3,
+  "points": 4100,
+  "max_inline_points": 1
+}
+```
+
+**<- result**
+```
+{"job_id":"calc-20260919-111225-9148","lambda_used":1.5406,"energy_eV":8047.79,"theta_unit":"deg theta","polarization":"s","delta_theta":0.012,"structure_used":{"substrate":{"material":"SiO2","sigma":3.8,"density":2.65},"stacks":[{"N":30,"layers":[{"material":"Ru","thickness":12.24,"sigma":4,"density":11.5},{"material":"C","thickness":71.91,"sigma":4,"density":2}]},{"N":1,"layers":[{"material":"C","thickness":15,"sigma":3,"density":0.9}]}],"buffer":{"material":"Ru","thickness":200,"sigma":4,"density":11.5}},"file":"jobs\\calc-20260919-111225-9148\\curve.dat","points":4100,"curve":null,"critical_angle_deg":0.257467,"bragg_peaks":[{"order":1,"theta_deg":0.576104,"r_peak":0.855915,"fwhm_deg":0.0427342},{"order":2,"theta_deg":1.07873,"r_peak":0.61969,"fwhm_deg":0.0241524},{"order":3,"theta_deg":1.59485,"r_peak":0.231328,"fwhm_deg":0.0201947},{"order":4,"theta_deg":2.11548,"r_peak":0.0489927,"fwhm_deg":0.0188861},{"order":5,"theta_deg":2.63611,"r_peak":0.00608235,"fwhm_deg":0.0185865},{"order":6,"theta_deg":3.15973,"r_peak":0.000293175,"fwhm_deg":0.019416},{"order":7,"theta_deg":3.68036,"r_peak":1.40532E-6,"fwhm_deg":0.0186251},{"order":8,"theta_deg":4.20849,"r_peak":1.06948E-5,"fwhm_deg":0.0193646},{"order":9,"theta_deg":4.73362,"r_peak":4.51301E-6,"fwhm_deg":0.0187002},{"order":10,"theta_deg":5.25875,"r_peak":7.89489E-7,"fwhm_deg":0.0194429}],"period_A":84.15,"n_periods":30}
+```
+
+**-> mcp__xrc__calc_reflectivity**
+```json
+{
+  "structure": {
+    "substrate": {
+      "material": "SiO2",
+      "density": 2.65,
+      "sigma": 3.8
+    },
+    "buffer": {
+      "material": "Ru",
+      "thickness": 200,
+      "sigma": 4,
+      "density": 11.5
+    },
+    "stacks": [
+      {
+        "N": 30,
+        "layers": [
+          {
+            "material": "Ru",
+            "thickness": 12.24,
+            "sigma": 4,
+            "density": 11.5
+          },
+          {
+            "material": "C",
+            "thickness": 71.91,
+            "sigma": 4,
+            "density": 2
+          }
+        ]
+      },
+      {
+        "N": 1,
+        "layers": [
+          {
+            "material": "C",
+            "thickness": 15,
+            "sigma": 3,
+            "density": 0.9
+          }
+        ]
+      }
+    ]
+  },
+  "lambda": 1.5406,
+  "polarization": "s",
+  "delta_theta": 0.012,
+  "theta_min": 1.2,
+  "theta_max": 1.55,
+  "points": 71
+}
+```
+
+**<- result**
+```
+{"job_id":"calc-20260919-111228-9bd0","lambda_used":1.5406,"energy_eV":8047.79,"theta_unit":"deg theta","polarization":"s","delta_theta":0.012,"structure_used":{"substrate":{"material":"SiO2","sigma":3.8,"density":2.65},"stacks":[{"N":30,"layers":[{"material":"Ru","thickness":12.24,"sigma":4,"density":11.5},{"material":"C","thickness":71.91,"sigma":4,"density":2}]},{"N":1,"layers":[{"material":"C","thickness":15,"sigma":3,"density":0.9}]}],"buffer":{"material":"Ru","thickness":200,"sigma":4,"density":11.5}},"file":"jobs\\calc-20260919-111228-9bd0\\curve.dat","points":71,"curve":[[1.2,0.000247176],[1.205,0.00186905],[1.21,0.0017033],[1.215,0.000167091],[1.22,0.00123821],[1.225,0.00158714],[1.23,0.00020981],[1.235,0.000810797],[1.24,0.00135925],[1.245,0.00025374],[1.25,0.000598483],[1.255,0.00117348],[1.26,0.000268315],[1.265,0.000450751],[1.27,0.00109008],[1.275,0.00028364],[1.28,0.00032991],[1.285,0.00108368],[1.29,0.000355046],[1.295,0.000633357],[1.3,0.00052851],[1.305,0.000559477],[1.31,0.000670675],[1.315,0.000572216],[1.32,0.000546248],[1.325,0.000673255],[1.33,0.000603392],[1.335,0.000518797],[1.34,0.000638156],[1.345,0.000622326],[1.35,0.000499126],[1.355,0.000576983],[1.36,0.000607596],[1.365,0.000470012],[1.37,0.000488438],[1.375,0.000558589],[1.38,0.000446937],[1.385,0.000398709],[1.39,0.000470339],[1.395,0.000413708],[1.4,0.000333038],[1.405,0.000380361],[1.41,0.000385386],[1.415,0.000314082],[1.42,0.000316604],[1.425,0.000358736],[1.43,0.000340573],[1.435,0.000311016],[1.44,0.000354094],[1.445,0.000415992],[1.45,0.000393757],[1.455,0.000398023],[1.46,0.000356472],[1.465,0.000361481],[1.47,0.000393426],[1.475,0.000403278],[1.48,0.000406344],[1.485,0.000490583],[1.49,0.000533418],[1.495,0.000513913],[1.5,0.000636201],[1.505,0.000757619],[1.51,0.000715085],[1.515,0.000839459],[1.52,0.00108987],[1.525,0.00106792],[1.53,0.0011265],[1.535,0.00153919],[1.54,0.00164327],[1.545,0.00158926],[1.55,0.00217856]],"critical_angle_deg":0.257467,"bragg_peaks":[],"period_A":84.15,"n_periods":30}
+```
+
+**-> mcp__xrc__calc_reflectivity**
+```json
+{
+  "structure": {
+    "substrate": {
+      "material": "SiO2",
+      "density": 2.65,
+      "sigma": 3.8
+    },
+    "buffer": {
+      "material": "Ru",
+      "thickness": 200,
+      "sigma": 4,
+      "density": 11.5
+    },
+    "stacks": [
+      {
+        "N": 30,
+        "layers": [
+          {
+            "material": "Ru",
+            "thickness": 11.76,
+            "sigma": 4,
+            "density": 11.5
+          },
+          {
+            "material": "C",
+            "thickness": 69.09,
+            "sigma": 4,
+            "density": 2
+          }
+        ]
+      },
+      {
+        "N": 1,
+        "layers": [
+          {
+            "material": "C",
+            "thickness": 15,
+            "sigma": 3,
+            "density": 0.9
+          }
+        ]
+      }
+    ]
+  },
+  "lambda": 1.5406,
+  "polarization": "s",
+  "delta_theta": 0.012,
+  "theta_min": 0.15,
+  "theta_max": 6.3,
+  "points": 4100,
+  "max_inline_points": 1
+}
+```
+
+**<- result**
+```
+{"job_id":"calc-20260919-111231-42d5","lambda_used":1.5406,"energy_eV":8047.79,"theta_unit":"deg theta","polarization":"s","delta_theta":0.012,"structure_used":{"substrate":{"material":"SiO2","sigma":3.8,"density":2.65},"stacks":[{"N":30,"layers":[{"material":"Ru","thickness":11.76,"sigma":4,"density":11.5},{"material":"C","thickness":69.09,"sigma":4,"density":2}]},{"N":1,"layers":[{"material":"C","thickness":15,"sigma":3,"density":0.9}]}],"buffer":{"material":"Ru","thickness":200,"sigma":4,"density":11.5}},"file":"jobs\\calc-20260919-111231-42d5\\curve.dat","points":4100,"curve":null,"critical_angle_deg":0.255571,"bragg_peaks":[{"order":1,"theta_deg":0.595609,"r_peak":0.851594,"fwhm_deg":0.0415653},{"order":2,"theta_deg":1.12074,"r_peak":0.58034,"fwhm_deg":0.0242269},{"order":3,"theta_deg":1.65787,"r_peak":0.198643,"fwhm_deg":0.0202975},{"order":4,"theta_deg":2.1995,"r_peak":0.0385072,"fwhm_deg":0.0193167},{"order":5,"theta_deg":2.74263,"r_peak":0.00425647,"fwhm_deg":0.0194626},{"order":6,"theta_deg":3.28727,"r_peak":0.000214242,"fwhm_deg":0.0187404},{"order":7,"theta_deg":3.8334,"r_peak":8.00349E-7,"fwhm_deg":0.0172768},{"order":8,"theta_deg":4.37803,"r_peak":5.84581E-6,"fwhm_deg":0.0197641},{"order":9,"theta_deg":4.92717,"r_peak":2.10007E-6,"fwhm_deg":0.0194843},{"order":10,"theta_deg":5.4733,"r_peak":3.32615E-7,"fwhm_deg":0.0220917}],"period_A":80.85,"n_periods":30}
+```
+
+**-> mcp__xrc__calc_reflectivity**
+```json
+{
+  "structure": {
+    "substrate": {
+      "material": "SiO2",
+      "density": 2.65,
+      "sigma": 3.8
+    },
+    "buffer": {
+      "material": "Ru",
+      "thickness": 200,
+      "sigma": 4,
+      "density": 11.5
+    },
+    "stacks": [
+      {
+        "N": 30,
+        "layers": [
+          {
+            "material": "Ru",
+            "thickness": 11.76,
+            "sigma": 4,
+            "density": 11.5
+          },
+          {
+            "material": "C",
+            "thickness": 69.09,
+            "sigma": 4,
+            "density": 2
+          }
+        ]
+      },
+      {
+        "N": 1,
+        "layers": [
+          {
+            "material": "C",
+            "thickness": 15,
+            "sigma": 3,
+            "density": 0.9
+          }
+        ]
+      }
+    ]
+  },
+  "lambda": 1.5406,
+  "polarization": "s",
+  "delta_theta": 0.012,
+  "theta_min": 1.2,
+  "theta_max": 1.55,
+  "points": 71
+}
+```
+
+**<- result**
+```
+{"job_id":"calc-20260919-111232-dfb6","lambda_used":1.5406,"energy_eV":8047.79,"theta_unit":"deg theta","polarization":"s","delta_theta":0.012,"structure_used":{"substrate":{"material":"SiO2","sigma":3.8,"density":2.65},"stacks":[{"N":30,"layers":[{"material":"Ru","thickness":11.76,"sigma":4,"density":11.5},{"material":"C","thickness":69.09,"sigma":4,"density":2}]},{"N":1,"layers":[{"material":"C","thickness":15,"sigma":3,"density":0.9}]}],"buffer":{"material":"Ru","thickness":200,"sigma":4,"density":11.5}},"file":"jobs\\calc-20260919-111232-dfb6\\curve.dat","points":71,"curve":[[1.2,0.00515629],[1.205,0.00360287],[1.21,0.000225071],[1.215,0.00255099],[1.22,0.00349768],[1.225,0.000606717],[1.23,0.000999684],[1.235,0.00273157],[1.24,0.00103111],[1.245,0.000310538],[1.25,0.00185535],[1.255,0.00120816],[1.26,0.000136916],[1.265,0.00116314],[1.27,0.00121411],[1.275,0.000153805],[1.28,0.000725715],[1.285,0.00112643],[1.29,0.000213951],[1.295,0.000623132],[1.3,0.000502496],[1.305,0.000546319],[1.31,0.000612719],[1.315,0.000498664],[1.32,0.000490846],[1.325,0.000593466],[1.33,0.000511774],[1.335,0.000437581],[1.34,0.000542476],[1.345,0.000528795],[1.35,0.000411742],[1.355,0.000468059],[1.36,0.000513213],[1.365,0.000394918],[1.37,0.000379179],[1.375,0.000454892],[1.38,0.000383923],[1.385,0.000307193],[1.39,0.000359568],[1.395,0.000349852],[1.4,0.000267393],[1.405,0.000274168],[1.41,0.000296843],[1.415,0.000250622],[1.42,0.000227879],[1.425,0.000241707],[1.43,0.000237393],[1.435,0.000230337],[1.44,0.000224065],[1.445,0.00023089],[1.45,0.000268366],[1.455,0.000267309],[1.46,0.000257939],[1.465,0.000254676],[1.47,0.000228371],[1.475,0.000261081],[1.48,0.00027798],[1.485,0.000253872],[1.49,0.000293447],[1.495,0.00033998],[1.5,0.000317881],[1.505,0.000350004],[1.51,0.000431416],[1.515,0.000423831],[1.52,0.000427169],[1.525,0.000531189],[1.53,0.00056468],[1.535,0.000536111],[1.54,0.000631075],[1.545,0.000721655],[1.55,0.000681116]],"critical_angle_deg":0.255571,"bragg_peaks":[],"period_A":80.85,"n_periods":30}
+```
+
+> **thinking**
+> I'll widen the edge window to 51 points to fit the ±0.1° convolution range, and the 1.2–1.55° window nicely captures the between-peaks level. Next I'll continue with the ratio and layer-sigma variants.
+
+**-> mcp__xrc__calc_reflectivity**
+```json
+{
+  "structure": {
+    "substrate": {
+      "material": "SiO2",
+      "density": 2.65,
+      "sigma": 3.8
+    },
+    "buffer": {
+      "material": "Ru",
+      "thickness": 200,
+      "sigma": 4,
+      "density": 11.5
+    },
+    "stacks": [
+      {
+        "N": 30,
+        "layers": [
+          {
+            "material": "Ru",
+            "thickness": 15,
+            "sigma": 4,
+            "density": 11.5
+          },
+          {
+            "material": "C",
+            "thickness": 67.5,
+            "sigma": 4,
+            "density": 2
+          }
+        ]
+      },
+      {
+        "N": 1,
+        "layers": [
+          {
+            "material": "C",
+            "thickness": 15,
+            "sigma": 3,
+            "density": 0.9
+          }
+        ]
+      }
+    ]
+  },
+  "lambda": 1.5406,
+  "polarization": "s",
+  "delta_theta": 0.012,
+  "theta_min": 1.2,
+  "theta_max": 1.55,
+  "points": 71
+}
+```
+
+**<- result**
+```
+{"job_id":"calc-20260919-111307-ae95","lambda_used":1.5406,"energy_eV":8047.79,"theta_unit":"deg theta","polarization":"s","delta_theta":0.012,"structure_used":{"substrate":{"material":"SiO2","sigma":3.8,"density":2.65},"stacks":[{"N":30,"layers":[{"material":"Ru","thickness":15,"sigma":4,"density":11.5},{"material":"C","thickness":67.5,"sigma":4,"density":2}]},{"N":1,"layers":[{"material":"C","thickness":15,"sigma":3,"density":0.9}]}],"buffer":{"material":"Ru","thickness":200,"sigma":4,"density":11.5}},"file":"jobs\\calc-20260919-111307-ae95\\curve.dat","points":71,"curve":[[1.2,0.00443552],[1.205,0.00101886],[1.21,0.00112108],[1.215,0.00362995],[1.22,0.00161361],[1.225,0.000291008],[1.23,0.0025488],[1.235,0.0019516],[1.24,0.000122179],[1.245,0.00156578],[1.25,0.00188548],[1.255,0.000228295],[1.26,0.00086426],[1.265,0.00164053],[1.27,0.000420821],[1.275,0.000464534],[1.28,0.00131647],[1.285,0.000521491],[1.29,0.000274694],[1.295,0.000561907],[1.3,0.000538866],[1.305,0.000588411],[1.31,0.000505819],[1.315,0.000481323],[1.32,0.000553437],[1.325,0.00049221],[1.33,0.000446012],[1.335,0.000530154],[1.34,0.000497694],[1.345,0.000418344],[1.35,0.000492538],[1.355,0.000502673],[1.36,0.000406503],[1.365,0.000449192],[1.37,0.000496771],[1.375,0.000401037],[1.38,0.000393261],[1.385,0.000463033],[1.39,0.00039896],[1.395,0.000345094],[1.4,0.000402827],[1.405,0.000383331],[1.41,0.000315474],[1.415,0.000341834],[1.42,0.000355801],[1.425,0.000308942],[1.43,0.000307291],[1.435,0.000326023],[1.44,0.000315356],[1.445,0.000311454],[1.45,0.000313567],[1.455,0.00033163],[1.46,0.000328782],[1.465,0.000311527],[1.47,0.000340222],[1.475,0.000328395],[1.48,0.000320649],[1.485,0.000363411],[1.49,0.000358211],[1.495,0.000352088],[1.5,0.000421227],[1.505,0.000434465],[1.51,0.000415252],[1.515,0.000510201],[1.52,0.000570202],[1.525,0.000530982],[1.53,0.000625793],[1.535,0.000757419],[1.54,0.000716045],[1.545,0.000772952],[1.55,0.0009952]],"critical_angle_deg":0.268108,"bragg_peaks":[],"period_A":82.5,"n_periods":30}
+```
+
+**-> mcp__xrc__calc_reflectivity**
+```json
+{
+  "structure": {
+    "substrate": {
+      "material": "SiO2",
+      "density": 2.65,
+      "sigma": 3.8
+    },
+    "buffer": {
+      "material": "Ru",
+      "thickness": 200,
+      "sigma": 4,
+      "density": 11.5
+    },
+    "stacks": [
+      {
+        "N": 30,
+        "layers": [
+          {
+            "material": "Ru",
+            "thickness": 9,
+            "sigma": 4,
+            "density": 11.5
+          },
+          {
+            "material": "C",
+            "thickness": 73.5,
+            "sigma": 4,
+            "density": 2
+          }
+        ]
+      },
+      {
+        "N": 1,
+        "layers": [
+          {
+            "material": "C",
+            "thickness": 15,
+            "sigma": 3,
+            "density": 0.9
+          }
+        ]
+      }
+    ]
+  },
+  "lambda": 1.5406,
+  "polarization": "s",
+  "delta_theta": 0.012,
+  "theta_min": 0.15,
+  "theta_max": 6.3,
+  "points": 4100,
+  "max_inline_points": 1
+}
+```
+
+**<- result**
+```
+{"job_id":"calc-20260919-111309-e9ec","lambda_used":1.5406,"energy_eV":8047.79,"theta_unit":"deg theta","polarization":"s","delta_theta":0.012,"structure_used":{"substrate":{"material":"SiO2","sigma":3.8,"density":2.65},"stacks":[{"N":30,"layers":[{"material":"Ru","thickness":9,"sigma":4,"density":11.5},{"material":"C","thickness":73.5,"sigma":4,"density":2}]},{"N":1,"layers":[{"material":"C","thickness":15,"sigma":3,"density":0.9}]}],"buffer":{"material":"Ru","thickness":200,"sigma":4,"density":11.5}},"file":"jobs\\calc-20260919-111309-e9ec\\curve.dat","points":4100,"curve":null,"critical_angle_deg":0.244384,"bragg_peaks":[{"order":1,"theta_deg":0.583606,"r_peak":0.832025,"fwhm_deg":0.0347367},{"order":2,"theta_deg":1.09673,"r_peak":0.506424,"fwhm_deg":0.0222621},{"order":3,"theta_deg":1.62486,"r_peak":0.17728,"fwhm_deg":0.0200135},{"order":4,"theta_deg":2.15449,"r_peak":0.0463553,"fwhm_deg":0.0190126},{"order":5,"theta_deg":2.68712,"r_peak":0.00861032,"fwhm_deg":0.0192739},{"order":6,"theta_deg":3.22125,"r_peak":0.00126987,"fwhm_deg":0.0188265},{"order":7,"theta_deg":3.75538,"r_peak":0.000118645,"fwhm_deg":0.0190831},{"order":8,"theta_deg":4.29251,"r_peak":5.63161E-6,"fwhm_deg":0.0196107}],"period_A":82.5,"n_periods":30}
+```
+
+**-> mcp__xrc__calc_reflectivity**
+```json
+{
+  "structure": {
+    "substrate": {
+      "material": "SiO2",
+      "density": 2.65,
+      "sigma": 3.8
+    },
+    "buffer": {
+      "material": "Ru",
+      "thickness": 200,
+      "sigma": 4,
+      "density": 11.5
+    },
+    "stacks": [
+      {
+        "N": 30,
+        "layers": [
+          {
+            "material": "Ru",
+            "thickness": 9,
+            "sigma": 4,
+            "density": 11.5
+          },
+          {
+            "material": "C",
+            "thickness": 73.5,
+            "sigma": 4,
+            "density": 2
+          }
+        ]
+      },
+      {
+        "N": 1,
+        "layers": [
+          {
+            "material": "C",
+            "thickness": 15,
+            "sigma": 3,
+            "density": 0.9
+          }
+        ]
+      }
+    ]
+  },
+  "lambda": 1.5406,
+  "polarization": "s",
+  "delta_theta": 0.012,
+  "theta_min": 1.2,
+  "theta_max": 1.55,
+  "points": 71
+}
+```
+
+**<- result**
+```
+{"job_id":"calc-20260919-111310-9d1b","lambda_used":1.5406,"energy_eV":8047.79,"theta_unit":"deg theta","polarization":"s","delta_theta":0.012,"structure_used":{"substrate":{"material":"SiO2","sigma":3.8,"density":2.65},"stacks":[{"N":30,"layers":[{"material":"Ru","thickness":9,"sigma":4,"density":11.5},{"material":"C","thickness":73.5,"sigma":4,"density":2}]},{"N":1,"layers":[{"material":"C","thickness":15,"sigma":3,"density":0.9}]}],"buffer":{"material":"Ru","thickness":200,"sigma":4,"density":11.5}},"file":"jobs\\calc-20260919-111310-9d1b\\curve.dat","points":71,"curve":[[1.2,0.00045037],[1.205,0.000690189],[1.21,0.00185775],[1.215,0.00064867],[1.22,0.000314551],[1.225,0.00136186],[1.23,0.000676891],[1.235,0.000171419],[1.24,0.00105378],[1.245,0.000661874],[1.25,0.00010182],[1.255,0.00090702],[1.26,0.000720343],[1.265,3.19419E-5],[1.27,0.000777861],[1.275,0.000895578],[1.28,3.42415E-5],[1.285,0.00061185],[1.29,0.00111509],[1.295,0.000627919],[1.3,0.000698053],[1.305,0.000567828],[1.31,0.000609044],[1.315,0.000727466],[1.32,0.000610327],[1.325,0.000560711],[1.33,0.000692561],[1.335,0.000634303],[1.34,0.000509542],[1.345,0.000596054],[1.35,0.000604718],[1.355,0.000453409],[1.36,0.000462105],[1.365,0.000516959],[1.37,0.000396667],[1.375,0.00033193],[1.38,0.000389743],[1.385,0.000337847],[1.39,0.000244794],[1.395,0.000267219],[1.4,0.000274052],[1.405,0.000204275],[1.41,0.000182602],[1.415,0.000211316],[1.42,0.000205385],[1.425,0.000173832],[1.43,0.000182294],[1.435,0.000235101],[1.44,0.000245118],[1.445,0.000218949],[1.45,0.000287261],[1.455,0.000375564],[1.46,0.000220107],[1.465,0.000247092],[1.47,0.000239051],[1.475,0.000266919],[1.48,0.000328167],[1.485,0.000324957],[1.49,0.000350702],[1.495,0.000453796],[1.5,0.000475113],[1.505,0.000474097],[1.51,0.000602299],[1.515,0.000674857],[1.52,0.000641199],[1.525,0.000752178],[1.53,0.000902308],[1.535,0.000862234],[1.54,0.000911188],[1.545,0.00112866],[1.55,0.00114919]],"critical_angle_deg":0.244384,"bragg_peaks":[],"period_A":82.5,"n_periods":30}
+```
+
+**-> mcp__xrc__calc_reflectivity**
+```json
+{
+  "structure": {
+    "substrate": {
+      "material": "SiO2",
+      "density": 2.65,
+      "sigma": 3.8
+    },
+    "buffer": {
+      "material": "Ru",
+      "thickness": 200,
+      "sigma": 2,
+      "density": 11.5
+    },
+    "stacks": [
+      {
+        "N": 30,
+        "layers": [
+          {
+            "material": "Ru",
+            "thickness": 12,
+            "sigma": 4,
+            "density": 11.5
+          },
+          {
+            "material": "C",
+            "thickness": 70.5,
+            "sigma": 4,
+            "density": 2
+          }
+        ]
+      },
+      {
+        "N": 1,
+        "layers": [
+          {
+            "material": "C",
+            "thickness": 15,
+            "sigma": 3,
+            "density": 0.9
+          }
+        ]
+      }
+    ]
+  },
+  "lambda": 1.5406,
+  "polarization": "s",
+  "delta_theta": 0.012,
+  "theta_min": 0.15,
+  "theta_max": 6.3,
+  "points": 4100,
+  "max_inline_points": 1
+}
+```
+
+**<- result**
+```
+{"job_id":"calc-20260919-111314-07a9","lambda_used":1.5406,"energy_eV":8047.79,"theta_unit":"deg theta","polarization":"s","delta_theta":0.012,"structure_used":{"substrate":{"material":"SiO2","sigma":3.8,"density":2.65},"stacks":[{"N":30,"layers":[{"material":"Ru","thickness":12,"sigma":4,"density":11.5},{"material":"C","thickness":70.5,"sigma":4,"density":2}]},{"N":1,"layers":[{"material":"C","thickness":15,"sigma":3,"density":0.9}]}],"buffer":{"material":"Ru","thickness":200,"sigma":2,"density":11.5}},"file":"jobs\\calc-20260919-111314-07a9\\curve.dat","points":4100,"curve":null,"critical_angle_deg":0.25652,"bragg_peaks":[{"order":1,"theta_deg":0.585106,"r_peak":0.854407,"fwhm_deg":0.0423702},{"order":2,"theta_deg":1.09973,"r_peak":0.60273,"fwhm_deg":0.0241141},{"order":3,"theta_deg":1.62636,"r_peak":0.215183,"fwhm_deg":0.0201788},{"order":4,"theta_deg":2.15599,"r_peak":0.0448174,"fwhm_deg":0.0188617},{"order":5,"theta_deg":2.68862,"r_peak":0.0051943,"fwhm_deg":0.0189564},{"order":6,"theta_deg":3.22425,"r_peak":0.000282689,"fwhm_deg":0.0183969},{"order":8,"theta_deg":4.28951,"r_peak":1.22249E-5,"fwhm_deg":0.0177511},{"order":9,"theta_deg":4.82664,"r_peak":4.79454E-6,"fwhm_deg":0.0180257},{"order":10,"theta_deg":5.36377,"r_peak":1.09561E-6,"fwhm_deg":0.0182101}],"period_A":82.5,"n_periods":30}
+```
+
+**-> mcp__xrc__calc_reflectivity**
+```json
+{
+  "structure": {
+    "substrate": {
+      "material": "SiO2",
+      "density": 2.65,
+      "sigma": 3.8
+    },
+    "buffer": {
+      "material": "Ru",
+      "thickness": 200,
+      "sigma": 2,
+      "density": 11.5
+    },
+    "stacks": [
+      {
+        "N": 30,
+        "layers": [
+          {
+            "material": "Ru",
+            "thickness": 12,
+            "sigma": 4,
+            "density": 11.5
+          },
+          {
+            "material": "C",
+            "thickness": 70.5,
+            "sigma": 4,
+            "density": 2
+          }
+        ]
+      },
+      {
+        "N": 1,
+        "layers": [
+          {
+            "material": "C",
+            "thickness": 15,
+            "sigma": 3,
+            "density": 0.9
+          }
+        ]
+      }
+    ]
+  },
+  "lambda": 1.5406,
+  "polarization": "s",
+  "delta_theta": 0.012,
+  "theta_min": 1.2,
+  "theta_max": 1.55,
+  "points": 71
+}
+```
+
+**<- result**
+```
+{"job_id":"calc-20260919-111317-379a","lambda_used":1.5406,"energy_eV":8047.79,"theta_unit":"deg theta","polarization":"s","delta_theta":0.012,"structure_used":{"substrate":{"material":"SiO2","sigma":3.8,"density":2.65},"stacks":[{"N":30,"layers":[{"material":"Ru","thickness":12,"sigma":4,"density":11.5},{"material":"C","thickness":70.5,"sigma":4,"density":2}]},{"N":1,"layers":[{"material":"C","thickness":15,"sigma":3,"density":0.9}]}],"buffer":{"material":"Ru","thickness":200,"sigma":2,"density":11.5}},"file":"jobs\\calc-20260919-111317-379a\\curve.dat","points":71,"curve":[[1.2,0.00191207],[1.205,0.00031631],[1.21,0.00217616],[1.215,0.00205964],[1.22,0.000235383],[1.225,0.00128895],[1.23,0.00189542],[1.235,0.000337586],[1.24,0.000766958],[1.245,0.00166066],[1.25,0.000427166],[1.255,0.000447501],[1.26,0.00145722],[1.265,0.000567333],[1.27,0.000204658],[1.275,0.00128825],[1.28,0.000759336],[1.285,6.27898E-5],[1.29,0.0010913],[1.295,0.000587387],[1.3,0.000722877],[1.305,0.000679387],[1.31,0.000549311],[1.315,0.000659366],[1.32,0.000692125],[1.325,0.000541047],[1.33,0.000586472],[1.335,0.000676088],[1.34,0.000540337],[1.345,0.000497008],[1.35,0.000599521],[1.355,0.000519726],[1.36,0.000417285],[1.365,0.000494337],[1.37,0.00048029],[1.375,0.000356185],[1.38,0.000374795],[1.385,0.000412556],[1.39,0.000323452],[1.395,0.000286421],[1.4,0.000328616],[1.405,0.000300405],[1.41,0.000247942],[1.415,0.00026109],[1.42,0.00028457],[1.425,0.000267326],[1.43,0.000245803],[1.435,0.000279295],[1.44,0.000329571],[1.445,0.000307961],[1.45,0.000308026],[1.455,0.000415414],[1.46,0.000279418],[1.465,0.000311309],[1.47,0.000319786],[1.475,0.000313012],[1.48,0.000374702],[1.485,0.000406817],[1.49,0.000387375],[1.495,0.000465119],[1.5,0.000547727],[1.505,0.00051637],[1.51,0.000576451],[1.515,0.000720334],[1.52,0.000709436],[1.525,0.000715354],[1.53,0.000906331],[1.535,0.00095945],[1.54,0.000902426],[1.545,0.0010905],[1.55,0.00126877]],"critical_angle_deg":0.25652,"bragg_peaks":[],"period_A":82.5,"n_periods":30}
+```
+
+**-> mcp__xrc__calc_reflectivity**
+```json
+{
+  "structure": {
+    "substrate": {
+      "material": "SiO2",
+      "density": 2.65,
+      "sigma": 3.8
+    },
+    "buffer": {
+      "material": "Ru",
+      "thickness": 200,
+      "sigma": 8,
+      "density": 11.5
+    },
+    "stacks": [
+      {
+        "N": 30,
+        "layers": [
+          {
+            "material": "Ru",
+            "thickness": 12,
+            "sigma": 4,
+            "density": 11.5
+          },
+          {
+            "material": "C",
+            "thickness": 70.5,
+            "sigma": 4,
+            "density": 2
+          }
+        ]
+      },
+      {
+        "N": 1,
+        "layers": [
+          {
+            "material": "C",
+            "thickness": 15,
+            "sigma": 3,
+            "density": 0.9
+          }
+        ]
+      }
+    ]
+  },
+  "lambda": 1.5406,
+  "polarization": "s",
+  "delta_theta": 0.012,
+  "theta_min": 0.15,
+  "theta_max": 6.3,
+  "points": 4100,
+  "max_inline_points": 1
+}
+```
+
+**<- result**
+```
+{"job_id":"calc-20260919-111319-1318","lambda_used":1.5406,"energy_eV":8047.79,"theta_unit":"deg theta","polarization":"s","delta_theta":0.012,"structure_used":{"substrate":{"material":"SiO2","sigma":3.8,"density":2.65},"stacks":[{"N":30,"layers":[{"material":"Ru","thickness":12,"sigma":4,"density":11.5},{"material":"C","thickness":70.5,"sigma":4,"density":2}]},{"N":1,"layers":[{"material":"C","thickness":15,"sigma":3,"density":0.9}]}],"buffer":{"material":"Ru","thickness":200,"sigma":8,"density":11.5}},"file":"jobs\\calc-20260919-111319-1318\\curve.dat","points":4100,"curve":null,"critical_angle_deg":0.25652,"bragg_peaks":[{"order":1,"theta_deg":0.585106,"r_peak":0.854088,"fwhm_deg":0.0422767},{"order":2,"theta_deg":1.09973,"r_peak":0.599269,"fwhm_deg":0.0241955},{"order":3,"theta_deg":1.62636,"r_peak":0.210907,"fwhm_deg":0.0203978},{"order":4,"theta_deg":2.15599,"r_peak":0.0431945,"fwhm_deg":0.0191516},{"order":5,"theta_deg":2.68862,"r_peak":0.00491197,"fwhm_deg":0.0194396},{"order":6,"theta_deg":3.22275,"r_peak":0.000246529,"fwhm_deg":0.0191928},{"order":7,"theta_deg":3.76288,"r_peak":5.35832E-7,"fwhm_deg":0.024746},{"order":8,"theta_deg":4.29251,"r_peak":8.47842E-6,"fwhm_deg":0.0187246},{"order":9,"theta_deg":4.82814,"r_peak":2.91384E-6,"fwhm_deg":0.019752},{"order":10,"theta_deg":5.36527,"r_peak":4.95356E-7,"fwhm_deg":0.0207104}],"period_A":82.5,"n_periods":30}
+```
+
+**-> mcp__xrc__calc_reflectivity**
+```json
+{
+  "structure": {
+    "substrate": {
+      "material": "SiO2",
+      "density": 2.65,
+      "sigma": 3.8
+    },
+    "buffer": {
+      "material": "Ru",
+      "thickness": 200,
+      "sigma": 8,
+      "density": 11.5
+    },
+    "stacks": [
+      {
+        "N": 30,
+        "layers": [
+          {
+            "material": "Ru",
+            "thickness": 12,
+            "sigma": 4,
+            "density": 11.5
+          },
+          {
+            "material": "C",
+            "thickness": 70.5,
+            "sigma": 4,
+            "density": 2
+          }
+        ]
+      },
+      {
+        "N": 1,
+        "layers": [
+          {
+            "material": "C",
+            "thickness": 15,
+            "sigma": 3,
+            "density": 0.9
+          }
+        ]
+      }
+    ]
+  },
+  "lambda": 1.5406,
+  "polarization": "s",
+  "delta_theta": 0.012,
+  "theta_min": 1.2,
+  "theta_max": 1.55,
+  "points": 71
+}
+```
+
+**<- result**
+```
+{"job_id":"calc-20260919-111321-cf66","lambda_used":1.5406,"energy_eV":8047.79,"theta_unit":"deg theta","polarization":"s","delta_theta":0.012,"structure_used":{"substrate":{"material":"SiO2","sigma":3.8,"density":2.65},"stacks":[{"N":30,"layers":[{"material":"Ru","thickness":12,"sigma":4,"density":11.5},{"material":"C","thickness":70.5,"sigma":4,"density":2}]},{"N":1,"layers":[{"material":"C","thickness":15,"sigma":3,"density":0.9}]}],"buffer":{"material":"Ru","thickness":200,"sigma":8,"density":11.5}},"file":"jobs\\calc-20260919-111321-cf66\\curve.dat","points":71,"curve":[[1.2,0.00298424],[1.205,4.80773E-5],[1.21,0.00247517],[1.215,0.00322879],[1.22,0.000359628],[1.225,0.00101399],[1.23,0.00267591],[1.235,0.000838563],[1.24,0.000303656],[1.245,0.00181744],[1.25,0.00102573],[1.255,0.000117937],[1.26,0.00105066],[1.265,0.00095455],[1.27,0.000194949],[1.275,0.000619107],[1.28,0.000700671],[1.285,0.000265412],[1.29,0.000528569],[1.295,0.000423713],[1.3,0.000458186],[1.305,0.000409749],[1.31,0.00041254],[1.315,0.000506574],[1.32,0.000470714],[1.325,0.000427325],[1.33,0.000553114],[1.335,0.000572154],[1.34,0.000470834],[1.345,0.000560798],[1.35,0.000646362],[1.355,0.000523793],[1.36,0.000531714],[1.365,0.000662104],[1.37,0.000571828],[1.375,0.000482011],[1.38,0.000599425],[1.385,0.000586992],[1.39,0.000446824],[1.395,0.000495838],[1.4,0.000546492],[1.405,0.000414672],[1.41,0.000376626],[1.415,0.000447405],[1.42,0.00038236],[1.425,0.000299801],[1.43,0.000342986],[1.435,0.000348324],[1.44,0.00027761],[1.445,0.000267551],[1.45,0.000305466],[1.455,0.000305613],[1.46,0.000334171],[1.465,0.000323434],[1.47,0.00033718],[1.475,0.000306356],[1.48,0.0003079],[1.485,0.000327259],[1.49,0.000310275],[1.495,0.000337352],[1.5,0.000381791],[1.505,0.000367055],[1.51,0.000411446],[1.515,0.000506054],[1.52,0.000500376],[1.525,0.000530072],[1.53,0.000686916],[1.535,0.000722447],[1.54,0.000709055],[1.545,0.000902601],[1.55,0.00104465]],"critical_angle_deg":0.25652,"bragg_peaks":[],"period_A":82.5,"n_periods":30}
+```
+
+**-> mcp__xrc__calc_reflectivity**
+```json
+{
+  "structure": {
+    "substrate": {
+      "material": "SiO2",
+      "density": 2.65,
+      "sigma": 3.8
+    },
+    "buffer": {
+      "material": "Ru",
+      "thickness": 200,
+      "sigma": 4,
+      "density": 11.5
+    },
+    "stacks": [
+      {
+        "N": 30,
+        "layers": [
+          {
+            "material": "Ru",
+            "thickness": 12,
+            "sigma": 2,
+            "density": 11.5
+          },
+          {
+            "material": "C",
+            "thickness": 70.5,
+            "sigma": 4,
+            "density": 2
+          }
+        ]
+      },
+      {
+        "N": 1,
+        "layers": [
+          {
+            "material": "C",
+            "thickness": 15,
+            "sigma": 3,
+            "density": 0.9
+          }
+        ]
+      }
+    ]
+  },
+  "lambda": 1.5406,
+  "polarization": "s",
+  "delta_theta": 0.012,
+  "theta_min": 0.15,
+  "theta_max": 6.3,
+  "points": 4100,
+  "max_inline_points": 1
+}
+```
+
+**<- result**
+```
+{"job_id":"calc-20260919-111323-f648","lambda_used":1.5406,"energy_eV":8047.79,"theta_unit":"deg theta","polarization":"s","delta_theta":0.012,"structure_used":{"substrate":{"material":"SiO2","sigma":3.8,"density":2.65},"stacks":[{"N":30,"layers":[{"material":"Ru","thickness":12,"sigma":2,"density":11.5},{"material":"C","thickness":70.5,"sigma":4,"density":2}]},{"N":1,"layers":[{"material":"C","thickness":15,"sigma":3,"density":0.9}]}],"buffer":{"material":"Ru","thickness":200,"sigma":4,"density":11.5}},"file":"jobs\\calc-20260919-111323-f648\\curve.dat","points":4100,"curve":null,"critical_angle_deg":0.25652,"bragg_peaks":[{"order":1,"theta_deg":0.585106,"r_peak":0.86937,"fwhm_deg":0.0432916},{"order":2,"theta_deg":1.09973,"r_peak":0.645527,"fwhm_deg":0.0249921},{"order":3,"theta_deg":1.62636,"r_peak":0.282897,"fwhm_deg":0.0207272},{"order":4,"theta_deg":2.15599,"r_peak":0.081167,"fwhm_deg":0.019265},{"order":5,"theta_deg":2.68862,"r_peak":0.0162911,"fwhm_deg":0.019278},{"order":6,"theta_deg":3.22275,"r_peak":0.0034501,"fwhm_deg":0.0189308},{"order":7,"theta_deg":3.75688,"r_peak":0.00131301,"fwhm_deg":0.0192178},{"order":8,"theta_deg":4.29251,"r_peak":0.000723251,"fwhm_deg":0.0191704},{"order":9,"theta_deg":4.82814,"r_peak":0.000353545,"fwhm_deg":0.0192362},{"order":10,"theta_deg":5.36377,"r_peak":0.000152123,"fwhm_deg":0.0192702},{"order":11,"theta_deg":5.9009,"r_peak":6.21475E-5,"fwhm_deg":0.0192498}],"period_A":82.5,"n_periods":30}
+```
+
+**-> mcp__xrc__calc_reflectivity**
+```json
+{
+  "structure": {
+    "substrate": {
+      "material": "SiO2",
+      "density": 2.65,
+      "sigma": 3.8
+    },
+    "buffer": {
+      "material": "Ru",
+      "thickness": 200,
+      "sigma": 4,
+      "density": 11.5
+    },
+    "stacks": [
+      {
+        "N": 30,
+        "layers": [
+          {
+            "material": "Ru",
+            "thickness": 12,
+            "sigma": 2,
+            "density": 11.5
+          },
+          {
+            "material": "C",
+            "thickness": 70.5,
+            "sigma": 4,
+            "density": 2
+          }
+        ]
+      },
+      {
+        "N": 1,
+        "layers": [
+          {
+            "material": "C",
+            "thickness": 15,
+            "sigma": 3,
+            "density": 0.9
+          }
+        ]
+      }
+    ]
+  },
+  "lambda": 1.5406,
+  "polarization": "s",
+  "delta_theta": 0.012,
+  "theta_min": 1.2,
+  "theta_max": 1.55,
+  "points": 71
+}
+```
+
+**<- result**
+```
+{"job_id":"calc-20260919-111326-db88","lambda_used":1.5406,"energy_eV":8047.79,"theta_unit":"deg theta","polarization":"s","delta_theta":0.012,"structure_used":{"substrate":{"material":"SiO2","sigma":3.8,"density":2.65},"stacks":[{"N":30,"layers":[{"material":"Ru","thickness":12,"sigma":2,"density":11.5},{"material":"C","thickness":70.5,"sigma":4,"density":2}]},{"N":1,"layers":[{"material":"C","thickness":15,"sigma":3,"density":0.9}]}],"buffer":{"material":"Ru","thickness":200,"sigma":4,"density":11.5}},"file":"jobs\\calc-20260919-111326-db88\\curve.dat","points":71,"curve":[[1.2,0.00270233],[1.205,0.00025021],[1.21,0.00270071],[1.215,0.00298034],[1.22,0.000331978],[1.225,0.00136987],[1.23,0.00264341],[1.235,0.000660574],[1.24,0.000641273],[1.245,0.00206763],[1.25,0.000849361],[1.255,0.000319313],[1.26,0.00151901],[1.265,0.000932979],[1.27,0.000203769],[1.275,0.00114246],[1.28,0.000928145],[1.285,0.000165597],[1.29,0.000925492],[1.295,0.000586411],[1.3,0.000681825],[1.305,0.000637967],[1.31,0.000547105],[1.315,0.000653753],[1.32,0.000664374],[1.325,0.000544209],[1.33,0.000626318],[1.335,0.000699152],[1.34,0.000564846],[1.345,0.000574885],[1.35,0.000688452],[1.355,0.000582942],[1.36,0.000516684],[1.365,0.000635724],[1.37,0.000591181],[1.375,0.00046351],[1.38,0.000536186],[1.385,0.000566021],[1.39,0.000437779],[1.395,0.000436036],[1.4,0.000499876],[1.405,0.000418994],[1.41,0.000359886],[1.415,0.000411075],[1.42,0.000401466],[1.425,0.000341971],[1.43,0.000349665],[1.435,0.000383925],[1.44,0.000378062],[1.445,0.000352131],[1.45,0.000378532],[1.455,0.000452747],[1.46,0.00037189],[1.465,0.000384849],[1.47,0.000397453],[1.475,0.000381564],[1.48,0.000422633],[1.485,0.000451576],[1.49,0.000431992],[1.495,0.000499699],[1.5,0.000576441],[1.505,0.000547251],[1.51,0.000613592],[1.515,0.000762374],[1.52,0.000751315],[1.525,0.000772489],[1.53,0.00099257],[1.535,0.00105139],[1.54,0.00100492],[1.545,0.001248],[1.55,0.00146165]],"critical_angle_deg":0.25652,"bragg_peaks":[],"period_A":82.5,"n_periods":30}
+```
+
+**-> mcp__xrc__calc_reflectivity**
+```json
+{
+  "structure": {
+    "substrate": {
+      "material": "SiO2",
+      "density": 2.65,
+      "sigma": 3.8
+    },
+    "buffer": {
+      "material": "Ru",
+      "thickness": 200,
+      "sigma": 4,
+      "density": 11.5
+    },
+    "stacks": [
+      {
+        "N": 30,
+        "layers": [
+          {
+            "material": "Ru",
+            "thickness": 12,
+            "sigma": 8,
+            "density": 11.5
+          },
+          {
+            "material": "C",
+            "thickness": 70.5,
+            "sigma": 4,
+            "density": 2
+          }
+        ]
+      },
+      {
+        "N": 1,
+        "layers": [
+          {
+            "material": "C",
+            "thickness": 15,
+            "sigma": 3,
+            "density": 0.9
+          }
+        ]
+      }
+    ]
+  },
+  "lambda": 1.5406,
+  "polarization": "s",
+  "delta_theta": 0.012,
+  "theta_min": 0.15,
+  "theta_max": 6.3,
+  "points": 4100,
+  "max_inline_points": 1
+}
+```
+
+**<- result**
+```
+{"job_id":"calc-20260919-111330-bd9d","lambda_used":1.5406,"energy_eV":8047.79,"theta_unit":"deg theta","polarization":"s","delta_theta":0.012,"structure_used":{"substrate":{"material":"SiO2","sigma":3.8,"density":2.65},"stacks":[{"N":30,"layers":[{"material":"Ru","thickness":12,"sigma":8,"density":11.5},{"material":"C","thickness":70.5,"sigma":4,"density":2}]},{"N":1,"layers":[{"material":"C","thickness":15,"sigma":3,"density":0.9}]}],"buffer":{"material":"Ru","thickness":200,"sigma":4,"density":11.5}},"file":"jobs\\calc-20260919-111330-bd9d\\curve.dat","points":4100,"curve":null,"critical_angle_deg":0.25652,"bragg_peaks":[{"order":1,"theta_deg":0.586607,"r_peak":0.806694,"fwhm_deg":0.0399486},{"order":2,"theta_deg":1.09973,"r_peak":0.470977,"fwhm_deg":0.0222308},{"order":3,"theta_deg":1.62636,"r_peak":0.0972174,"fwhm_deg":0.0195717},{"order":4,"theta_deg":2.15599,"r_peak":0.0142833,"fwhm_deg":0.0186257},{"order":5,"theta_deg":2.68862,"r_peak":0.00206529,"fwhm_deg":0.0192099},{"order":6,"theta_deg":3.22275,"r_peak":0.00032447,"fwhm_deg":0.0202522},{"order":7,"theta_deg":3.75688,"r_peak":5.70522E-5,"fwhm_deg":0.0192846},{"order":8,"theta_deg":4.29101,"r_peak":8.80535E-6,"fwhm_deg":0.0189341},{"order":9,"theta_deg":4.82664,"r_peak":1.03705E-6,"fwhm_deg":0.0203192}],"period_A":82.5,"n_periods":30}
+```
+
+**-> mcp__xrc__calc_reflectivity**
+```json
+{
+  "structure": {
+    "substrate": {
+      "material": "SiO2",
+      "density": 2.65,
+      "sigma": 3.8
+    },
+    "buffer": {
+      "material": "Ru",
+      "thickness": 200,
+      "sigma": 4,
+      "density": 11.5
+    },
+    "stacks": [
+      {
+        "N": 30,
+        "layers": [
+          {
+            "material": "Ru",
+            "thickness": 12,
+            "sigma": 8,
+            "density": 11.5
+          },
+          {
+            "material": "C",
+            "thickness": 70.5,
+            "sigma": 4,
+            "density": 2
+          }
+        ]
+      },
+      {
+        "N": 1,
+        "layers": [
+          {
+            "material": "C",
+            "thickness": 15,
+            "sigma": 3,
+            "density": 0.9
+          }
+        ]
+      }
+    ]
+  },
+  "lambda": 1.5406,
+  "polarization": "s",
+  "delta_theta": 0.012,
+  "theta_min": 1.2,
+  "theta_max": 1.55,
+  "points": 71
+}
+```
+
+**<- result**
+```
+{"job_id":"calc-20260919-111332-2cfc","lambda_used":1.5406,"energy_eV":8047.79,"theta_unit":"deg theta","polarization":"s","delta_theta":0.012,"structure_used":{"substrate":{"material":"SiO2","sigma":3.8,"density":2.65},"stacks":[{"N":30,"layers":[{"material":"Ru","thickness":12,"sigma":8,"density":11.5},{"material":"C","thickness":70.5,"sigma":4,"density":2}]},{"N":1,"layers":[{"material":"C","thickness":15,"sigma":3,"density":0.9}]}],"buffer":{"material":"Ru","thickness":200,"sigma":4,"density":11.5}},"file":"jobs\\calc-20260919-111332-2cfc\\curve.dat","points":71,"curve":[[1.2,0.0011433],[1.205,0.000151019],[1.21,0.00122309],[1.215,0.0010962],[1.22,0.000112072],[1.225,0.000765962],[1.23,0.000937284],[1.235,0.000112619],[1.24,0.000545793],[1.245,0.000846584],[1.25,0.000102623],[1.255,0.000409409],[1.26,0.000857719],[1.265,0.000158599],[1.27,0.000249967],[1.275,0.000908818],[1.28,0.000320384],[1.285,0.000113644],[1.29,0.000899018],[1.295,0.000452426],[1.3,0.000564004],[1.305,0.000507057],[1.31,0.000435046],[1.315,0.000533228],[1.32,0.000528378],[1.325,0.000420017],[1.33,0.000471323],[1.335,0.000511966],[1.34,0.000399644],[1.345,0.000382281],[1.35,0.000439041],[1.355,0.000358466],[1.36,0.00029178],[1.365,0.000337644],[1.37,0.00030297],[1.375,0.000215894],[1.38,0.000227854],[1.385,0.000233861],[1.39,0.000167951],[1.395,0.000147131],[1.4,0.000164221],[1.405,0.00013929],[1.41,0.000110759],[1.415,0.000116495],[1.42,0.000128647],[1.425,0.00012482],[1.43,0.000113808],[1.435,0.000136349],[1.44,0.000177246],[1.445,0.000169381],[1.45,0.000173288],[1.455,0.000250544],[1.46,0.000135876],[1.465,0.000164092],[1.47,0.000170672],[1.475,0.000170094],[1.48,0.000218226],[1.485,0.000241091],[1.49,0.000233395],[1.495,0.000291666],[1.5,0.000344751],[1.505,0.000327674],[1.51,0.000374241],[1.515,0.000461694],[1.52,0.000451389],[1.525,0.000462883],[1.53,0.000575596],[1.535,0.000594528],[1.54,0.000563901],[1.545,0.000672494],[1.55,0.000752429]],"critical_angle_deg":0.25652,"bragg_peaks":[],"period_A":82.5,"n_periods":30}
+```
+
+> **thinking**
+> So far I've found: period shifts peak positions, ratio changes relative order heights and the order-7 node, buffer sigma affects only inter-peak levels, and Ru sigma strongly shifts higher-order heights plus inter-peak levels. Next I'll test the C and surface-layer sigmas, along with an edge window for the surface-layer variants.
+
+**-> mcp__xrc__calc_reflectivity**
+```json
+{
+  "structure": {
+    "substrate": {
+      "material": "SiO2",
+      "density": 2.65,
+      "sigma": 3.8
+    },
+    "buffer": {
+      "material": "Ru",
+      "thickness": 200,
+      "sigma": 4,
+      "density": 11.5
+    },
+    "stacks": [
+      {
+        "N": 30,
+        "layers": [
+          {
+            "material": "Ru",
+            "thickness": 12,
+            "sigma": 4,
+            "density": 11.5
+          },
+          {
+            "material": "C",
+            "thickness": 70.5,
+            "sigma": 2,
+            "density": 2
+          }
+        ]
+      },
+      {
+        "N": 1,
+        "layers": [
+          {
+            "material": "C",
+            "thickness": 15,
+            "sigma": 3,
+            "density": 0.9
+          }
+        ]
+      }
+    ]
+  },
+  "lambda": 1.5406,
+  "polarization": "s",
+  "delta_theta": 0.012,
+  "theta_min": 0.15,
+  "theta_max": 6.3,
+  "points": 4100,
+  "max_inline_points": 1
+}
+```
+
+**<- result**
+```
+{"job_id":"calc-20260919-111400-c949","lambda_used":1.5406,"energy_eV":8047.79,"theta_unit":"deg theta","polarization":"s","delta_theta":0.012,"structure_used":{"substrate":{"material":"SiO2","sigma":3.8,"density":2.65},"stacks":[{"N":30,"layers":[{"material":"Ru","thickness":12,"sigma":4,"density":11.5},{"material":"C","thickness":70.5,"sigma":2,"density":2}]},{"N":1,"layers":[{"material":"C","thickness":15,"sigma":3,"density":0.9}]}],"buffer":{"material":"Ru","thickness":200,"sigma":4,"density":11.5}},"file":"jobs\\calc-20260919-111400-c949\\curve.dat","points":4100,"curve":null,"critical_angle_deg":0.25652,"bragg_peaks":[{"order":1,"theta_deg":0.585106,"r_peak":0.85939,"fwhm_deg":0.0438065},{"order":2,"theta_deg":1.09973,"r_peak":0.64713,"fwhm_deg":0.0251404},{"order":3,"theta_deg":1.62636,"r_peak":0.285115,"fwhm_deg":0.0207553},{"order":4,"theta_deg":2.15599,"r_peak":0.0814827,"fwhm_deg":0.0192864},{"order":5,"theta_deg":2.68862,"r_peak":0.0160753,"fwhm_deg":0.0192958},{"order":6,"theta_deg":3.22275,"r_peak":0.00312694,"fwhm_deg":0.0195225},{"order":7,"theta_deg":3.75688,"r_peak":0.00124037,"fwhm_deg":0.0192927},{"order":8,"theta_deg":4.29251,"r_peak":0.000697208,"fwhm_deg":0.0192672},{"order":9,"theta_deg":4.82814,"r_peak":0.00034308,"fwhm_deg":0.0193389},{"order":10,"theta_deg":5.36377,"r_peak":0.000148539,"fwhm_deg":0.0193155},{"order":11,"theta_deg":5.9009,"r_peak":6.0615E-5,"fwhm_deg":0.0192986}],"period_A":82.5,"n_periods":30}
+```
+
+**-> mcp__xrc__calc_reflectivity**
+```json
+{
+  "structure": {
+    "substrate": {
+      "material": "SiO2",
+      "density": 2.65,
+      "sigma": 3.8
+    },
+    "buffer": {
+      "material": "Ru",
+      "thickness": 200,
+      "sigma": 4,
+      "density": 11.5
+    },
+    "stacks": [
+      {
+        "N": 30,
+        "layers": [
+          {
+            "material": "Ru",
+            "thickness": 12,
+            "sigma": 4,
+            "density": 11.5
+          },
+          {
+            "material": "C",
+            "thickness": 70.5,
+            "sigma": 2,
+            "density": 2
+          }
+        ]
+      },
+      {
+        "N": 1,
+        "layers": [
+          {
+            "material": "C",
+            "thickness": 15,
+            "sigma": 3,
+            "density": 0.9
+          }
+        ]
+      }
+    ]
+  },
+  "lambda": 1.5406,
+  "polarization": "s",
+  "delta_theta": 0.012,
+  "theta_min": 1.2,
+  "theta_max": 1.55,
+  "points": 71
+}
+```
+
+**<- result**
+```
+{"job_id":"calc-20260919-111401-5a98","lambda_used":1.5406,"energy_eV":8047.79,"theta_unit":"deg theta","polarization":"s","delta_theta":0.012,"structure_used":{"substrate":{"material":"SiO2","sigma":3.8,"density":2.65},"stacks":[{"N":30,"layers":[{"material":"Ru","thickness":12,"sigma":4,"density":11.5},{"material":"C","thickness":70.5,"sigma":2,"density":2}]},{"N":1,"layers":[{"material":"C","thickness":15,"sigma":3,"density":0.9}]}],"buffer":{"material":"Ru","thickness":200,"sigma":4,"density":11.5}},"file":"jobs\\calc-20260919-111401-5a98\\curve.dat","points":71,"curve":[[1.2,0.00272405],[1.205,0.000262876],[1.21,0.00260428],[1.215,0.00287507],[1.22,0.000357755],[1.225,0.00131387],[1.23,0.00244588],[1.235,0.000633805],[1.24,0.000660728],[1.245,0.00185946],[1.25,0.00074372],[1.255,0.000397842],[1.26,0.0013843],[1.265,0.000755333],[1.27,0.000286631],[1.275,0.00112674],[1.28,0.000737292],[1.285,0.000204231],[1.29,0.00101788],[1.295,0.00059517],[1.3,0.000708716],[1.305,0.000640581],[1.31,0.000565848],[1.315,0.000700275],[1.32,0.000691691],[1.325,0.000566599],[1.33,0.000674959],[1.335,0.000741045],[1.34,0.000589167],[1.345,0.00061332],[1.35,0.000729964],[1.355,0.000605241],[1.36,0.000538991],[1.365,0.000664361],[1.37,0.000607269],[1.375,0.000470847],[1.38,0.000546477],[1.385,0.000572445],[1.39,0.000435487],[1.395,0.000430634],[1.4,0.000495192],[1.405,0.000412543],[1.41,0.000347246],[1.415,0.000397981],[1.42,0.000395362],[1.425,0.000332797],[1.43,0.000334677],[1.435,0.00038066],[1.44,0.000381772],[1.445,0.000346505],[1.45,0.00038194],[1.455,0.000474101],[1.46,0.000368089],[1.465,0.00038461],[1.47,0.000392787],[1.475,0.000384226],[1.48,0.000434773],[1.485,0.000459148],[1.49,0.000444501],[1.495,0.000527552],[1.5,0.000602444],[1.505,0.000572269],[1.51,0.000656238],[1.515,0.000808651],[1.52,0.000790185],[1.525,0.000825466],[1.53,0.0010569],[1.535,0.00110487],[1.54,0.00106399],[1.545,0.00132388],[1.55,0.00152906]],"critical_angle_deg":0.25652,"bragg_peaks":[],"period_A":82.5,"n_periods":30}
+```
+
+**-> mcp__xrc__calc_reflectivity**
+```json
+{
+  "structure": {
+    "substrate": {
+      "material": "SiO2",
+      "density": 2.65,
+      "sigma": 3.8
+    },
+    "buffer": {
+      "material": "Ru",
+      "thickness": 200,
+      "sigma": 4,
+      "density": 11.5
+    },
+    "stacks": [
+      {
+        "N": 30,
+        "layers": [
+          {
+            "material": "Ru",
+            "thickness": 12,
+            "sigma": 4,
+            "density": 11.5
+          },
+          {
+            "material": "C",
+            "thickness": 70.5,
+            "sigma": 8,
+            "density": 2
+          }
+        ]
+      },
+      {
+        "N": 1,
+        "layers": [
+          {
+            "material": "C",
+            "thickness": 15,
+            "sigma": 3,
+            "density": 0.9
+          }
+        ]
+      }
+    ]
+  },
+  "lambda": 1.5406,
+  "polarization": "s",
+  "delta_theta": 0.012,
+  "theta_min": 0.15,
+  "theta_max": 6.3,
+  "points": 4100,
+  "max_inline_points": 1
+}
+```
+
+**<- result**
+```
+{"job_id":"calc-20260919-111404-b5d5","lambda_used":1.5406,"energy_eV":8047.79,"theta_unit":"deg theta","polarization":"s","delta_theta":0.012,"structure_used":{"substrate":{"material":"SiO2","sigma":3.8,"density":2.65},"stacks":[{"N":30,"layers":[{"material":"Ru","thickness":12,"sigma":4,"density":11.5},{"material":"C","thickness":70.5,"sigma":8,"density":2}]},{"N":1,"layers":[{"material":"C","thickness":15,"sigma":3,"density":0.9}]}],"buffer":{"material":"Ru","thickness":200,"sigma":4,"density":11.5}},"file":"jobs\\calc-20260919-111404-b5d5\\curve.dat","points":4100,"curve":null,"critical_angle_deg":0.25652,"bragg_peaks":[{"order":1,"theta_deg":0.586607,"r_peak":0.859321,"fwhm_deg":0.0399802},{"order":2,"theta_deg":1.09973,"r_peak":0.475077,"fwhm_deg":0.0220145},{"order":3,"theta_deg":1.62636,"r_peak":0.0983578,"fwhm_deg":0.019574},{"order":4,"theta_deg":2.15599,"r_peak":0.014986,"fwhm_deg":0.0185703},{"order":5,"theta_deg":2.68862,"r_peak":0.00223112,"fwhm_deg":0.0192249},{"order":6,"theta_deg":3.22275,"r_peak":0.000418832,"fwhm_deg":0.0183809},{"order":7,"theta_deg":3.75688,"r_peak":6.31475E-5,"fwhm_deg":0.0192127},{"order":8,"theta_deg":4.29251,"r_peak":9.57687E-6,"fwhm_deg":0.0187656},{"order":9,"theta_deg":4.82664,"r_peak":1.20803E-6,"fwhm_deg":0.0193146}],"period_A":82.5,"n_periods":30}
+```
+
+**-> mcp__xrc__calc_reflectivity**
+```json
+{
+  "structure": {
+    "substrate": {
+      "material": "SiO2",
+      "density": 2.65,
+      "sigma": 3.8
+    },
+    "buffer": {
+      "material": "Ru",
+      "thickness": 200,
+      "sigma": 4,
+      "density": 11.5
+    },
+    "stacks": [
+      {
+        "N": 30,
+        "layers": [
+          {
+            "material": "Ru",
+            "thickness": 12,
+            "sigma": 4,
+            "density": 11.5
+          },
+          {
+            "material": "C",
+            "thickness": 70.5,
+            "sigma": 8,
+            "density": 2
+          }
+        ]
+      },
+      {
+        "N": 1,
+        "layers": [
+          {
+            "material": "C",
+            "thickness": 15,
+            "sigma": 3,
+            "density": 0.9
+          }
+        ]
+      }
+    ]
+  },
+  "lambda": 1.5406,
+  "polarization": "s",
+  "delta_theta": 0.012,
+  "theta_min": 1.2,
+  "theta_max": 1.55,
+  "points": 71
+}
+```
+
+**<- result**
+```
+{"job_id":"calc-20260919-111408-cb07","lambda_used":1.5406,"energy_eV":8047.79,"theta_unit":"deg theta","polarization":"s","delta_theta":0.012,"structure_used":{"substrate":{"material":"SiO2","sigma":3.8,"density":2.65},"stacks":[{"N":30,"layers":[{"material":"Ru","thickness":12,"sigma":4,"density":11.5},{"material":"C","thickness":70.5,"sigma":8,"density":2}]},{"N":1,"layers":[{"material":"C","thickness":15,"sigma":3,"density":0.9}]}],"buffer":{"material":"Ru","thickness":200,"sigma":4,"density":11.5}},"file":"jobs\\calc-20260919-111408-cb07\\curve.dat","points":71,"curve":[[1.2,0.00117092],[1.205,0.000118864],[1.21,0.0015006],[1.215,0.00143424],[1.22,6.08785E-5],[1.225,0.000911093],[1.23,0.00147719],[1.235,0.000199149],[1.24,0.000494018],[1.245,0.00138371],[1.25,0.000376717],[1.255,0.000210096],[1.26,0.00119514],[1.265,0.000596752],[1.27,3.68761E-5],[1.275,0.000946843],[1.28,0.000780881],[1.285,2.44102E-6],[1.29,0.000670239],[1.295,0.000419021],[1.3,0.000488827],[1.305,0.000490117],[1.31,0.000377345],[1.315,0.00041091],[1.32,0.000454019],[1.325,0.000356068],[1.33,0.000345605],[1.335,0.000405067],[1.34,0.000334411],[1.345,0.000283292],[1.35,0.000334664],[1.355,0.000300348],[1.36,0.000233333],[1.365,0.000264851],[1.37,0.00026023],[1.375,0.000193771],[1.38,0.000198711],[1.385,0.000213256],[1.39,0.000167746],[1.395,0.000154454],[1.4,0.000168766],[1.405,0.000147132],[1.41,0.000133676],[1.415,0.000140041],[1.42,0.000134612],[1.425,0.000138288],[1.43,0.0001416],[1.435,0.000136544],[1.44,0.000161085],[1.445,0.000176004],[1.45,0.000160727],[1.455,0.000197062],[1.46,0.000137882],[1.465,0.000158335],[1.47,0.000174995],[1.475,0.000158464],[1.48,0.00018633],[1.485,0.000219709],[1.49,0.00020194],[1.495,0.000228239],[1.5,0.000286267],[1.505,0.000272174],[1.51,0.000283302],[1.515,0.000364981],[1.52,0.000371061],[1.525,0.000355543],[1.53,0.000448262],[1.535,0.000490922],[1.54,0.00045076],[1.545,0.000530648],[1.55,0.000631248]],"critical_angle_deg":0.25652,"bragg_peaks":[],"period_A":82.5,"n_periods":30}
+```
+
+**-> mcp__xrc__calc_reflectivity**
+```json
+{
+  "structure": {
+    "substrate": {
+      "material": "SiO2",
+      "density": 2.65,
+      "sigma": 3.8
+    },
+    "buffer": {
+      "material": "Ru",
+      "thickness": 200,
+      "sigma": 4,
+      "density": 11.5
+    },
+    "stacks": [
+      {
+        "N": 30,
+        "layers": [
+          {
+            "material": "Ru",
+            "thickness": 12,
+            "sigma": 4,
+            "density": 11.5
+          },
+          {
+            "material": "C",
+            "thickness": 70.5,
+            "sigma": 4,
+            "density": 2
+          }
+        ]
+      },
+      {
+        "N": 1,
+        "layers": [
+          {
+            "material": "C",
+            "thickness": 15,
+            "sigma": 2,
+            "density": 0.9
+          }
+        ]
+      }
+    ]
+  },
+  "lambda": 1.5406,
+  "polarization": "s",
+  "delta_theta": 0.012,
+  "theta_min": 0.15,
+  "theta_max": 6.3,
+  "points": 4100,
+  "max_inline_points": 1
+}
+```
+
+**<- result**
+```
+{"job_id":"calc-20260919-111411-5d85","lambda_used":1.5406,"energy_eV":8047.79,"theta_unit":"deg theta","polarization":"s","delta_theta":0.012,"structure_used":{"substrate":{"material":"SiO2","sigma":3.8,"density":2.65},"stacks":[{"N":30,"layers":[{"material":"Ru","thickness":12,"sigma":4,"density":11.5},{"material":"C","thickness":70.5,"sigma":4,"density":2}]},{"N":1,"layers":[{"material":"C","thickness":15,"sigma":2,"density":0.9}]}],"buffer":{"material":"Ru","thickness":200,"sigma":4,"density":11.5}},"file":"jobs\\calc-20260919-111411-5d85\\curve.dat","points":4100,"curve":null,"critical_angle_deg":0.25652,"bragg_peaks":[{"order":1,"theta_deg":0.585106,"r_peak":0.854393,"fwhm_deg":0.0423514},{"order":2,"theta_deg":1.09973,"r_peak":0.601857,"fwhm_deg":0.0241334},{"order":3,"theta_deg":1.62636,"r_peak":0.213611,"fwhm_deg":0.020254},{"order":4,"theta_deg":2.15599,"r_peak":0.0440671,"fwhm_deg":0.0189878},{"order":5,"theta_deg":2.68862,"r_peak":0.00504006,"fwhm_deg":0.0192086},{"order":6,"theta_deg":3.22275,"r_peak":0.000254646,"fwhm_deg":0.0189649},{"order":7,"theta_deg":3.75388,"r_peak":6.20088E-7,"fwhm_deg":0.0231463},{"order":8,"theta_deg":4.29101,"r_peak":8.72928E-6,"fwhm_deg":0.0185318},{"order":9,"theta_deg":4.82664,"r_peak":2.86124E-6,"fwhm_deg":0.01989},{"order":10,"theta_deg":5.36527,"r_peak":5.23064E-7,"fwhm_deg":0.0201903}],"period_A":82.5,"n_periods":30}
+```
+
+**-> mcp__xrc__calc_reflectivity**
+```json
+{
+  "structure": {
+    "substrate": {
+      "material": "SiO2",
+      "density": 2.65,
+      "sigma": 3.8
+    },
+    "buffer": {
+      "material": "Ru",
+      "thickness": 200,
+      "sigma": 4,
+      "density": 11.5
+    },
+    "stacks": [
+      {
+        "N": 30,
+        "layers": [
+          {
+            "material": "Ru",
+            "thickness": 12,
+            "sigma": 4,
+            "density": 11.5
+          },
+          {
+            "material": "C",
+            "thickness": 70.5,
+            "sigma": 4,
+            "density": 2
+          }
+        ]
+      },
+      {
+        "N": 1,
+        "layers": [
+          {
+            "material": "C",
+            "thickness": 15,
+            "sigma": 2,
+            "density": 0.9
+          }
+        ]
+      }
+    ]
+  },
+  "lambda": 1.5406,
+  "polarization": "s",
+  "delta_theta": 0.012,
+  "theta_min": 1.2,
+  "theta_max": 1.55,
+  "points": 71
+}
+```
+
+**<- result**
+```
+{"job_id":"calc-20260919-111413-29bd","lambda_used":1.5406,"energy_eV":8047.79,"theta_unit":"deg theta","polarization":"s","delta_theta":0.012,"structure_used":{"substrate":{"material":"SiO2","sigma":3.8,"density":2.65},"stacks":[{"N":30,"layers":[{"material":"Ru","thickness":12,"sigma":4,"density":11.5},{"material":"C","thickness":70.5,"sigma":4,"density":2}]},{"N":1,"layers":[{"material":"C","thickness":15,"sigma":2,"density":0.9}]}],"buffer":{"material":"Ru","thickness":200,"sigma":4,"density":11.5}},"file":"jobs\\calc-20260919-111413-29bd\\curve.dat","points":71,"curve":[[1.2,0.0021552],[1.205,0.00021056],[1.21,0.00221605],[1.215,0.00233076],[1.22,0.00023525],[1.225,0.00117832],[1.23,0.00206423],[1.235,0.000439429],[1.24,0.000606972],[1.245,0.00166164],[1.25,0.000556183],[1.255,0.000325232],[1.26,0.00130453],[1.265,0.000637919],[1.27,0.00017226],[1.275,0.00106357],[1.28,0.000704752],[1.285,9.11204E-5],[1.29,0.000897965],[1.295,0.000508473],[1.3,0.000614243],[1.305,0.000569251],[1.31,0.000478816],[1.315,0.000583676],[1.32,0.00059576],[1.325,0.00047739],[1.33,0.000546349],[1.335,0.000614047],[1.34,0.000489455],[1.345,0.000486337],[1.35,0.000582589],[1.355,0.000490437],[1.36,0.000422293],[1.365,0.000514474],[1.37,0.000477226],[1.375,0.000365015],[1.38,0.000413427],[1.385,0.000435203],[1.39,0.00033179],[1.395,0.000321739],[1.4,0.000365853],[1.405,0.000306484],[1.41,0.000259548],[1.415,0.000290253],[1.42,0.000286506],[1.425,0.000249914],[1.43,0.000248728],[1.435,0.000273548],[1.44,0.000286516],[1.445,0.000268817],[1.45,0.000281117],[1.455,0.000354988],[1.46,0.000268988],[1.465,0.000287883],[1.47,0.000297767],[1.475,0.000284252],[1.48,0.000327546],[1.485,0.000355161],[1.49,0.000337063],[1.495,0.000399571],[1.5,0.000469452],[1.505,0.000443459],[1.51,0.00049961],[1.515,0.00062725],[1.52,0.000617423],[1.525,0.00063208],[1.53,0.000812097],[1.535,0.000858394],[1.54,0.000816216],[1.545,0.0010068],[1.55,0.00117198]],"critical_angle_deg":0.25652,"bragg_peaks":[],"period_A":82.5,"n_periods":30}
+```
+
+**-> mcp__xrc__calc_reflectivity**
+```json
+{
+  "structure": {
+    "substrate": {
+      "material": "SiO2",
+      "density": 2.65,
+      "sigma": 3.8
+    },
+    "buffer": {
+      "material": "Ru",
+      "thickness": 200,
+      "sigma": 4,
+      "density": 11.5
+    },
+    "stacks": [
+      {
+        "N": 30,
+        "layers": [
+          {
+            "material": "Ru",
+            "thickness": 12,
+            "sigma": 4,
+            "density": 11.5
+          },
+          {
+            "material": "C",
+            "thickness": 70.5,
+            "sigma": 4,
+            "density": 2
+          }
+        ]
+      },
+      {
+        "N": 1,
+        "layers": [
+          {
+            "material": "C",
+            "thickness": 15,
+            "sigma": 2,
+            "density": 0.9
+          }
+        ]
+      }
+    ]
+  },
+  "lambda": 1.5406,
+  "polarization": "s",
+  "delta_theta": 0.012,
+  "theta_min": 0.15,
+  "theta_max": 0.4,
+  "points": 51
+}
+```
+
+**<- result**
+```
+{"job_id":"calc-20260919-111414-e380","lambda_used":1.5406,"energy_eV":8047.79,"theta_unit":"deg theta","polarization":"s","delta_theta":0.012,"structure_used":{"substrate":{"material":"SiO2","sigma":3.8,"density":2.65},"stacks":[{"N":30,"layers":[{"material":"Ru","thickness":12,"sigma":4,"density":11.5},{"material":"C","thickness":70.5,"sigma":4,"density":2}]},{"N":1,"layers":[{"material":"C","thickness":15,"sigma":2,"density":0.9}]}],"buffer":{"material":"Ru","thickness":200,"sigma":4,"density":11.5}},"file":"jobs\\calc-20260919-111414-e380\\curve.dat","points":51,"curve":[[0.15,0.887727],[0.155,0.891205],[0.16,0.891855],[0.165,0.891092],[0.17,0.88944],[0.175,0.887284],[0.18,0.884367],[0.185,0.881528],[0.19,0.87785],[0.195,0.873802],[0.2,0.869551],[0.205,0.869571],[0.21,0.886984],[0.215,0.871041],[0.22,0.857046],[0.225,0.845607],[0.23,0.830554],[0.235,0.812524],[0.24,0.789347],[0.245,0.635338],[0.25,0.522494],[0.255,0.404892],[0.26,0.31035],[0.265,0.244171],[0.27,0.200595],[0.275,0.168003],[0.28,0.139871],[0.285,0.120611],[0.29,0.105421],[0.295,0.0929576],[0.3,0.0842173],[0.305,0.0763928],[0.31,0.184285],[0.315,0.153956],[0.32,0.127437],[0.325,0.113387],[0.33,0.0962642],[0.335,0.0887157],[0.34,0.0764143],[0.345,0.074289],[0.35,0.0655757],[0.355,0.0633529],[0.36,0.0608387],[0.365,0.0559128],[0.37,0.0562034],[0.375,0.0549067],[0.38,0.0510876],[0.385,0.0569198],[0.39,0.0482146],[0.395,0.0560556],[0.4,0.0515793]],"critical_angle_deg":0.25652,"bragg_peaks":[],"period_A":82.5,"n_periods":30}
+```
+
+**-> mcp__xrc__calc_reflectivity**
+```json
+{
+  "structure": {
+    "substrate": {
+      "material": "SiO2",
+      "density": 2.65,
+      "sigma": 3.8
+    },
+    "buffer": {
+      "material": "Ru",
+      "thickness": 200,
+      "sigma": 4,
+      "density": 11.5
+    },
+    "stacks": [
+      {
+        "N": 30,
+        "layers": [
+          {
+            "material": "Ru",
+            "thickness": 12,
+            "sigma": 4,
+            "density": 11.5
+          },
+          {
+            "material": "C",
+            "thickness": 70.5,
+            "sigma": 4,
+            "density": 2
+          }
+        ]
+      },
+      {
+        "N": 1,
+        "layers": [
+          {
+            "material": "C",
+            "thickness": 15,
+            "sigma": 8,
+            "density": 0.9
+          }
+        ]
+      }
+    ]
+  },
+  "lambda": 1.5406,
+  "polarization": "s",
+  "delta_theta": 0.012,
+  "theta_min": 0.15,
+  "theta_max": 6.3,
+  "points": 4100,
+  "max_inline_points": 1
+}
+```
+
+**<- result**
+```
+{"job_id":"calc-20260919-111417-1ea6","lambda_used":1.5406,"energy_eV":8047.79,"theta_unit":"deg theta","polarization":"s","delta_theta":0.012,"structure_used":{"substrate":{"material":"SiO2","sigma":3.8,"density":2.65},"stacks":[{"N":30,"layers":[{"material":"Ru","thickness":12,"sigma":4,"density":11.5},{"material":"C","thickness":70.5,"sigma":4,"density":2}]},{"N":1,"layers":[{"material":"C","thickness":15,"sigma":8,"density":0.9}]}],"buffer":{"material":"Ru","thickness":200,"sigma":4,"density":11.5}},"file":"jobs\\calc-20260919-111417-1ea6\\curve.dat","points":4100,"curve":null,"critical_angle_deg":0.25652,"bragg_peaks":[{"order":1,"theta_deg":0.585106,"r_peak":0.853816,"fwhm_deg":0.0423375},{"order":2,"theta_deg":1.09973,"r_peak":0.601699,"fwhm_deg":0.0241426},{"order":3,"theta_deg":1.62636,"r_peak":0.214323,"fwhm_deg":0.020232},{"order":4,"theta_deg":2.15599,"r_peak":0.0440803,"fwhm_deg":0.018986},{"order":5,"theta_deg":2.68862,"r_peak":0.00498913,"fwhm_deg":0.0192732},{"order":6,"theta_deg":3.22275,"r_peak":0.000254859,"fwhm_deg":0.0189202},{"order":7,"theta_deg":3.75388,"r_peak":4.05883E-7,"fwhm_deg":0.0295391},{"order":8,"theta_deg":4.29251,"r_peak":8.73764E-6,"fwhm_deg":0.0185605},{"order":9,"theta_deg":4.82664,"r_peak":3.05931E-6,"fwhm_deg":0.0193481},{"order":10,"theta_deg":5.36377,"r_peak":5.05046E-7,"fwhm_deg":0.020503}],"period_A":82.5,"n_periods":30}
+```
+
+**-> mcp__xrc__calc_reflectivity**
+```json
+{
+  "structure": {
+    "substrate": {
+      "material": "SiO2",
+      "density": 2.65,
+      "sigma": 3.8
+    },
+    "buffer": {
+      "material": "Ru",
+      "thickness": 200,
+      "sigma": 4,
+      "density": 11.5
+    },
+    "stacks": [
+      {
+        "N": 30,
+        "layers": [
+          {
+            "material": "Ru",
+            "thickness": 12,
+            "sigma": 4,
+            "density": 11.5
+          },
+          {
+            "material": "C",
+            "thickness": 70.5,
+            "sigma": 4,
+            "density": 2
+          }
+        ]
+      },
+      {
+        "N": 1,
+        "layers": [
+          {
+            "material": "C",
+            "thickness": 15,
+            "sigma": 8,
+            "density": 0.9
+          }
+        ]
+      }
+    ]
+  },
+  "lambda": 1.5406,
+  "polarization": "s",
+  "delta_theta": 0.012,
+  "theta_min": 1.2,
+  "theta_max": 1.55,
+  "points": 71
+}
+```
+
+**<- result**
+```
+{"job_id":"calc-20260919-111421-4b2d","lambda_used":1.5406,"energy_eV":8047.79,"theta_unit":"deg theta","polarization":"s","delta_theta":0.012,"structure_used":{"substrate":{"material":"SiO2","sigma":3.8,"density":2.65},"stacks":[{"N":30,"layers":[{"material":"Ru","thickness":12,"sigma":4,"density":11.5},{"material":"C","thickness":70.5,"sigma":4,"density":2}]},{"N":1,"layers":[{"material":"C","thickness":15,"sigma":8,"density":0.9}]}],"buffer":{"material":"Ru","thickness":200,"sigma":4,"density":11.5}},"file":"jobs\\calc-20260919-111421-4b2d\\curve.dat","points":71,"curve":[[1.2,0.00232675],[1.205,0.00025804],[1.21,0.00233533],[1.215,0.00250649],[1.22,0.000293543],[1.225,0.00124535],[1.23,0.00222002],[1.235,0.000516325],[1.24,0.000648048],[1.245,0.00178881],[1.25,0.000642063],[1.255,0.000355629],[1.26,0.00140548],[1.265,0.000728565],[1.27,0.000197685],[1.275,0.00114379],[1.28,0.000797867],[1.285,0.000112864],[1.29,0.000958479],[1.295,0.000557724],[1.3,0.000669137],[1.305,0.000625181],[1.31,0.00052229],[1.315,0.000630176],[1.32,0.000649257],[1.325,0.000519331],[1.33,0.000585601],[1.335,0.000663912],[1.34,0.000532088],[1.345,0.000519729],[1.35,0.000625708],[1.355,0.000533516],[1.36,0.000453538],[1.365,0.000550824],[1.37,0.000519551],[1.375,0.0003969],[1.38,0.000443651],[1.385,0.000473783],[1.39,0.000365491],[1.395,0.00034896],[1.4,0.000398502],[1.405,0.000340018],[1.41,0.00028691],[1.415,0.000318047],[1.42,0.000317221],[1.425,0.000278459],[1.43,0.000274615],[1.435,0.000299762],[1.44,0.000314457],[1.445,0.00029562],[1.45,0.000303925],[1.455,0.000379533],[1.46,0.000296373],[1.465,0.000314104],[1.47,0.000325768],[1.475,0.00030986],[1.48,0.000351895],[1.485,0.000382192],[1.49,0.000361497],[1.495,0.000421338],[1.5,0.000495205],[1.505,0.000467847],[1.51,0.00051882],[1.515,0.000650545],[1.52,0.000642756],[1.525,0.000650303],[1.53,0.000831729],[1.535,0.000883875],[1.54,0.00083516],[1.545,0.00102245],[1.55,0.00119583]],"critical_angle_deg":0.25652,"bragg_peaks":[],"period_A":82.5,"n_periods":30}
+```
+
+**-> mcp__xrc__calc_reflectivity**
+```json
+{
+  "structure": {
+    "substrate": {
+      "material": "SiO2",
+      "density": 2.65,
+      "sigma": 3.8
+    },
+    "buffer": {
+      "material": "Ru",
+      "thickness": 200,
+      "sigma": 4,
+      "density": 11.5
+    },
+    "stacks": [
+      {
+        "N": 30,
+        "layers": [
+          {
+            "material": "Ru",
+            "thickness": 12,
+            "sigma": 4,
+            "density": 11.5
+          },
+          {
+            "material": "C",
+            "thickness": 70.5,
+            "sigma": 4,
+            "density": 2
+          }
+        ]
+      },
+      {
+        "N": 1,
+        "layers": [
+          {
+            "material": "C",
+            "thickness": 15,
+            "sigma": 8,
+            "density": 0.9
+          }
+        ]
+      }
+    ]
+  },
+  "lambda": 1.5406,
+  "polarization": "s",
+  "delta_theta": 0.012,
+  "theta_min": 0.15,
+  "theta_max": 0.4,
+  "points": 51
+}
+```
+
+**<- result**
+```
+{"job_id":"calc-20260919-111423-397e","lambda_used":1.5406,"energy_eV":8047.79,"theta_unit":"deg theta","polarization":"s","delta_theta":0.012,"structure_used":{"substrate":{"material":"SiO2","sigma":3.8,"density":2.65},"stacks":[{"N":30,"layers":[{"material":"Ru","thickness":12,"sigma":4,"density":11.5},{"material":"C","thickness":70.5,"sigma":4,"density":2}]},{"N":1,"layers":[{"material":"C","thickness":15,"sigma":8,"density":0.9}]}],"buffer":{"material":"Ru","thickness":200,"sigma":4,"density":11.5}},"file":"jobs\\calc-20260919-111423-397e\\curve.dat","points":51,"curve":[[0.15,0.887878],[0.155,0.891339],[0.16,0.891968],[0.165,0.891178],[0.17,0.889504],[0.175,0.887324],[0.18,0.884376],[0.185,0.88151],[0.19,0.877798],[0.195,0.873712],[0.2,0.869423],[0.205,0.869417],[0.21,0.886785],[0.215,0.870778],[0.22,0.856708],[0.225,0.845199],[0.23,0.830049],[0.235,0.811906],[0.24,0.788589],[0.245,0.63391],[0.25,0.520735],[0.255,0.402904],[0.26,0.308286],[0.265,0.242135],[0.27,0.19863],[0.275,0.166137],[0.28,0.138115],[0.285,0.118946],[0.29,0.103851],[0.295,0.0914713],[0.3,0.082806],[0.305,0.0750554],[0.31,0.182516],[0.315,0.15223],[0.32,0.125824],[0.325,0.11182],[0.33,0.0948208],[0.335,0.0873087],[0.34,0.075113],[0.345,0.0730239],[0.35,0.0643819],[0.355,0.0622256],[0.36,0.0597282],[0.365,0.0549025],[0.37,0.0552067],[0.375,0.0539365],[0.38,0.0502172],[0.385,0.055978],[0.39,0.0474389],[0.395,0.055224],[0.4,0.0507934]],"critical_angle_deg":0.25652,"bragg_peaks":[],"period_A":82.5,"n_periods":30}
+```
+
+**-> mcp__xrc__calc_reflectivity**
+```json
+{
+  "structure": {
+    "substrate": {
+      "material": "SiO2",
+      "density": 2.65,
+      "sigma": 3.8
+    },
+    "buffer": {
+      "material": "Ru",
+      "thickness": 200,
+      "sigma": 4,
+      "density": 11.5
+    },
+    "stacks": [
+      {
+        "N": 30,
+        "layers": [
+          {
+            "material": "Ru",
+            "thickness": 12,
+            "sigma": 4,
+            "density": 11.5
+          },
+          {
+            "material": "C",
+            "thickness": 70.5,
+            "sigma": 4,
+            "density": 2
+          }
+        ]
+      },
+      {
+        "N": 1,
+        "layers": [
+          {
+            "material": "C",
+            "thickness": 15,
+            "sigma": 3,
+            "density": 0.9
+          }
+        ]
+      }
+    ]
+  },
+  "lambda": 1.5406,
+  "polarization": "s",
+  "delta_theta": 0.012,
+  "theta_min": 0.15,
+  "theta_max": 0.4,
+  "points": 51
+}
+```
+
+**<- result**
+```
+{"job_id":"calc-20260919-111425-2674","lambda_used":1.5406,"energy_eV":8047.79,"theta_unit":"deg theta","polarization":"s","delta_theta":0.012,"structure_used":{"substrate":{"material":"SiO2","sigma":3.8,"density":2.65},"stacks":[{"N":30,"layers":[{"material":"Ru","thickness":12,"sigma":4,"density":11.5},{"material":"C","thickness":70.5,"sigma":4,"density":2}]},{"N":1,"layers":[{"material":"C","thickness":15,"sigma":3,"density":0.9}]}],"buffer":{"material":"Ru","thickness":200,"sigma":4,"density":11.5}},"file":"jobs\\calc-20260919-111425-2674\\curve.dat","points":51,"curve":[[0.15,0.887739],[0.155,0.891216],[0.16,0.891864],[0.165,0.891099],[0.17,0.889445],[0.175,0.887287],[0.18,0.884368],[0.185,0.881526],[0.19,0.877846],[0.195,0.873794],[0.2,0.86954],[0.205,0.869558],[0.21,0.886967],[0.215,0.871018],[0.22,0.857018],[0.225,0.845573],[0.23,0.830511],[0.235,0.812472],[0.24,0.789283],[0.245,0.635217],[0.25,0.522345],[0.255,0.404723],[0.26,0.310175],[0.265,0.243998],[0.27,0.200428],[0.275,0.167845],[0.28,0.139721],[0.285,0.120469],[0.29,0.105287],[0.295,0.0928306],[0.3,0.0840965],[0.305,0.0762781],[0.31,0.184134],[0.315,0.153809],[0.32,0.1273],[0.325,0.113253],[0.33,0.0961408],[0.335,0.0885952],[0.34,0.0763028],[0.345,0.0741804],[0.35,0.0654731],[0.355,0.0632559],[0.36,0.060743],[0.365,0.0558257],[0.37,0.0561173],[0.375,0.0548228],[0.38,0.0510122],[0.385,0.0568382],[0.39,0.0481472],[0.395,0.0559833],[0.4,0.0515108]],"critical_angle_deg":0.25652,"bragg_peaks":[],"period_A":82.5,"n_periods":30}
+```
+
+> **thinking**
+> Sensitivity map is about two-thirds complete — period, ratio, Ru/C, and surface sigma variants are done, with density, light-carbon, and N halved/doubled variants still remaining before scale computation and the first fit. Moving on to the density variants next.
+
+**-> mcp__xrc__calc_reflectivity**
+```json
+{
+  "structure": {
+    "substrate": {
+      "material": "SiO2",
+      "density": 2.65,
+      "sigma": 3.8
+    },
+    "buffer": {
+      "material": "Ru",
+      "thickness": 200,
+      "sigma": 4,
+      "density": 13.225
+    },
+    "stacks": [
+      {
+        "N": 30,
+        "layers": [
+          {
+            "material": "Ru",
+            "thickness": 12,
+            "sigma": 4,
+            "density": 11.5
+          },
+          {
+            "material": "C",
+            "thickness": 70.5,
+            "sigma": 4,
+            "density": 2
+          }
+        ]
+      },
+      {
+        "N": 1,
+        "layers": [
+          {
+            "material": "C",
+            "thickness": 15,
+            "sigma": 3,
+            "density": 0.9
+          }
+        ]
+      }
+    ]
+  },
+  "lambda": 1.5406,
+  "polarization": "s",
+  "delta_theta": 0.012,
+  "theta_min": 0.15,
+  "theta_max": 6.3,
+  "points": 4100,
+  "max_inline_points": 1
+}
+```
+
+**<- result**
+```
+{"job_id":"calc-20260919-111449-9b4e","lambda_used":1.5406,"energy_eV":8047.79,"theta_unit":"deg theta","polarization":"s","delta_theta":0.012,"structure_used":{"substrate":{"material":"SiO2","sigma":3.8,"density":2.65},"stacks":[{"N":30,"layers":[{"material":"Ru","thickness":12,"sigma":4,"density":11.5},{"material":"C","thickness":70.5,"sigma":4,"density":2}]},{"N":1,"layers":[{"material":"C","thickness":15,"sigma":3,"density":0.9}]}],"buffer":{"material":"Ru","thickness":200,"sigma":4,"density":13.225}},"file":"jobs\\calc-20260919-111449-9b4e\\curve.dat","points":4100,"curve":null,"critical_angle_deg":0.25652,"bragg_peaks":[{"order":1,"theta_deg":0.585106,"r_peak":0.855001,"fwhm_deg":0.0422275},{"order":2,"theta_deg":1.09973,"r_peak":0.604461,"fwhm_deg":0.0240154},{"order":3,"theta_deg":1.62636,"r_peak":0.213615,"fwhm_deg":0.0202798},{"order":4,"theta_deg":2.15599,"r_peak":0.0443833,"fwhm_deg":0.0189212},{"order":5,"theta_deg":2.68862,"r_peak":0.00504786,"fwhm_deg":0.0191875},{"order":6,"theta_deg":3.22275,"r_peak":0.000254944,"fwhm_deg":0.0189784},{"order":7,"theta_deg":3.75238,"r_peak":5.52172E-7,"fwhm_deg":0.154019},{"order":8,"theta_deg":4.29101,"r_peak":8.85062E-6,"fwhm_deg":0.0184527},{"order":9,"theta_deg":4.82664,"r_peak":3.01855E-6,"fwhm_deg":0.0194357},{"order":10,"theta_deg":5.36527,"r_peak":5.08273E-7,"fwhm_deg":0.0204711}],"period_A":82.5,"n_periods":30}
+```
+
+**-> mcp__xrc__calc_reflectivity**
+```json
+{
+  "structure": {
+    "substrate": {
+      "material": "SiO2",
+      "density": 2.65,
+      "sigma": 3.8
+    },
+    "buffer": {
+      "material": "Ru",
+      "thickness": 200,
+      "sigma": 4,
+      "density": 13.225
+    },
+    "stacks": [
+      {
+        "N": 30,
+        "layers": [
+          {
+            "material": "Ru",
+            "thickness": 12,
+            "sigma": 4,
+            "density": 11.5
+          },
+          {
+            "material": "C",
+            "thickness": 70.5,
+            "sigma": 4,
+            "density": 2
+          }
+        ]
+      },
+      {
+        "N": 1,
+        "layers": [
+          {
+            "material": "C",
+            "thickness": 15,
+            "sigma": 3,
+            "density": 0.9
+          }
+        ]
+      }
+    ]
+  },
+  "lambda": 1.5406,
+  "polarization": "s",
+  "delta_theta": 0.012,
+  "theta_min": 1.2,
+  "theta_max": 1.55,
+  "points": 71
+}
+```
+
+**<- result**
+```
+{"job_id":"calc-20260919-111451-f30a","lambda_used":1.5406,"energy_eV":8047.79,"theta_unit":"deg theta","polarization":"s","delta_theta":0.012,"structure_used":{"substrate":{"material":"SiO2","sigma":3.8,"density":2.65},"stacks":[{"N":30,"layers":[{"material":"Ru","thickness":12,"sigma":4,"density":11.5},{"material":"C","thickness":70.5,"sigma":4,"density":2}]},{"N":1,"layers":[{"material":"C","thickness":15,"sigma":3,"density":0.9}]}],"buffer":{"material":"Ru","thickness":200,"sigma":4,"density":13.225}},"file":"jobs\\calc-20260919-111451-f30a\\curve.dat","points":71,"curve":[[1.2,0.00229029],[1.205,0.00031697],[1.21,0.00179475],[1.215,0.00234597],[1.22,0.000373107],[1.225,0.000973311],[1.23,0.00209742],[1.235,0.000560562],[1.24,0.000510443],[1.245,0.00176901],[1.25,0.000684465],[1.255,0.000248185],[1.26,0.00146969],[1.265,0.00083975],[1.27,8.35623E-5],[1.275,0.00121828],[1.28,0.00101412],[1.285,2.23666E-5],[1.29,0.000969383],[1.295,0.0006169],[1.3,0.000751784],[1.305,0.000747308],[1.31,0.000598794],[1.315,0.000700748],[1.32,0.000773577],[1.325,0.000617676],[1.33,0.000648651],[1.335,0.000772569],[1.34,0.00064068],[1.345,0.000577829],[1.35,0.000706269],[1.355,0.000635882],[1.36,0.000510889],[1.365,0.000605332],[1.37,0.000602837],[1.375,0.000449867],[1.38,0.000474533],[1.385,0.00052787],[1.39,0.000406598],[1.395,0.000360878],[1.4,0.000420651],[1.405,0.000361013],[1.41,0.000284038],[1.415,0.000315273],[1.42,0.000315932],[1.425,0.000262264],[1.43,0.00025642],[1.435,0.00028056],[1.44,0.000285056],[1.445,0.000268484],[1.45,0.000275274],[1.455,0.000340437],[1.46,0.000285393],[1.465,0.000288549],[1.47,0.00030781],[1.475,0.000289104],[1.48,0.000317912],[1.485,0.000357283],[1.49,0.000338549],[1.495,0.000385421],[1.5,0.0004699],[1.505,0.000451898],[1.51,0.000489802],[1.515,0.000632015],[1.52,0.000643567],[1.525,0.000639927],[1.53,0.000826815],[1.535,0.0009081],[1.54,0.000853826],[1.545,0.0010388],[1.55,0.00124852]],"critical_angle_deg":0.25652,"bragg_peaks":[],"period_A":82.5,"n_periods":30}
+```
+
+**-> mcp__xrc__calc_reflectivity**
+```json
+{
+  "structure": {
+    "substrate": {
+      "material": "SiO2",
+      "density": 2.65,
+      "sigma": 3.8
+    },
+    "buffer": {
+      "material": "Ru",
+      "thickness": 200,
+      "sigma": 4,
+      "density": 9.775
+    },
+    "stacks": [
+      {
+        "N": 30,
+        "layers": [
+          {
+            "material": "Ru",
+            "thickness": 12,
+            "sigma": 4,
+            "density": 11.5
+          },
+          {
+            "material": "C",
+            "thickness": 70.5,
+            "sigma": 4,
+            "density": 2
+          }
+        ]
+      },
+      {
+        "N": 1,
+        "layers": [
+          {
+            "material": "C",
+            "thickness": 15,
+            "sigma": 3,
+            "density": 0.9
+          }
+        ]
+      }
+    ]
+  },
+  "lambda": 1.5406,
+  "polarization": "s",
+  "delta_theta": 0.012,
+  "theta_min": 0.15,
+  "theta_max": 6.3,
+  "points": 4100,
+  "max_inline_points": 1
+}
+```
+
+**<- result**
+```
+{"job_id":"calc-20260919-111453-c5a9","lambda_used":1.5406,"energy_eV":8047.79,"theta_unit":"deg theta","polarization":"s","delta_theta":0.012,"structure_used":{"substrate":{"material":"SiO2","sigma":3.8,"density":2.65},"stacks":[{"N":30,"layers":[{"material":"Ru","thickness":12,"sigma":4,"density":11.5},{"material":"C","thickness":70.5,"sigma":4,"density":2}]},{"N":1,"layers":[{"material":"C","thickness":15,"sigma":3,"density":0.9}]}],"buffer":{"material":"Ru","thickness":200,"sigma":4,"density":9.775}},"file":"jobs\\calc-20260919-111453-c5a9\\curve.dat","points":4100,"curve":null,"critical_angle_deg":0.25652,"bragg_peaks":[{"order":1,"theta_deg":0.585106,"r_peak":0.852763,"fwhm_deg":0.0420352},{"order":2,"theta_deg":1.09973,"r_peak":0.59886,"fwhm_deg":0.0242577},{"order":3,"theta_deg":1.62636,"r_peak":0.213865,"fwhm_deg":0.0202208},{"order":4,"theta_deg":2.15599,"r_peak":0.0437181,"fwhm_deg":0.0190659},{"order":5,"theta_deg":2.68862,"r_peak":0.00500938,"fwhm_deg":0.0192479},{"order":6,"theta_deg":3.22275,"r_peak":0.000253826,"fwhm_deg":0.0189465},{"order":7,"theta_deg":3.75538,"r_peak":4.95313E-7,"fwhm_deg":0.0234659},{"order":8,"theta_deg":4.29101,"r_peak":8.59283E-6,"fwhm_deg":0.0186778},{"order":9,"theta_deg":4.82814,"r_peak":2.98193E-6,"fwhm_deg":0.0195383},{"order":10,"theta_deg":5.36527,"r_peak":5.0674E-7,"fwhm_deg":0.0204811}],"period_A":82.5,"n_periods":30}
+```
+
+**-> mcp__xrc__calc_reflectivity**
+```json
+{
+  "structure": {
+    "substrate": {
+      "material": "SiO2",
+      "density": 2.65,
+      "sigma": 3.8
+    },
+    "buffer": {
+      "material": "Ru",
+      "thickness": 200,
+      "sigma": 4,
+      "density": 9.775
+    },
+    "stacks": [
+      {
+        "N": 30,
+        "layers": [
+          {
+            "material": "Ru",
+            "thickness": 12,
+            "sigma": 4,
+            "density": 11.5
+          },
+          {
+            "material": "C",
+            "thickness": 70.5,
+            "sigma": 4,
+            "density": 2
+          }
+        ]
+      },
+      {
+        "N": 1,
+        "layers": [
+          {
+            "material": "C",
+            "thickness": 15,
+            "sigma": 3,
+            "density": 0.9
+          }
+        ]
+      }
+    ]
+  },
+  "lambda": 1.5406,
+  "polarization": "s",
+  "delta_theta": 0.012,
+  "theta_min": 1.2,
+  "theta_max": 1.55,
+  "points": 71
+}
+```
+
+**<- result**
+```
+{"job_id":"calc-20260919-111456-294f","lambda_used":1.5406,"energy_eV":8047.79,"theta_unit":"deg theta","polarization":"s","delta_theta":0.012,"structure_used":{"substrate":{"material":"SiO2","sigma":3.8,"density":2.65},"stacks":[{"N":30,"layers":[{"material":"Ru","thickness":12,"sigma":4,"density":11.5},{"material":"C","thickness":70.5,"sigma":4,"density":2}]},{"N":1,"layers":[{"material":"C","thickness":15,"sigma":3,"density":0.9}]}],"buffer":{"material":"Ru","thickness":200,"sigma":4,"density":9.775}},"file":"jobs\\calc-20260919-111456-294f\\curve.dat","points":71,"curve":[[1.2,0.0020206],[1.205,0.000224616],[1.21,0.00242752],[1.215,0.00224605],[1.22,0.00021298],[1.225,0.00123699],[1.23,0.00193239],[1.235,0.000429862],[1.24,0.000620331],[1.245,0.00144814],[1.25,0.000534894],[1.255,0.000382088],[1.26,0.00104288],[1.265,0.000533609],[1.27,0.0003035],[1.275,0.000834286],[1.28,0.000479307],[1.285,0.000247046],[1.29,0.00078047],[1.295,0.000457842],[1.3,0.000524749],[1.305,0.000456792],[1.31,0.000428379],[1.315,0.000523255],[1.32,0.000486503],[1.325,0.000412101],[1.33,0.000503472],[1.335,0.00052032],[1.34,0.000412047],[1.345,0.000452793],[1.35,0.000515579],[1.355,0.000412943],[1.36,0.000388169],[1.365,0.000470238],[1.37,0.000409888],[1.375,0.00032945],[1.38,0.000388305],[1.385,0.000388158],[1.39,0.000299279],[1.395,0.000308324],[1.4,0.00034224],[1.405,0.000286072],[1.41,0.000253552],[1.415,0.000284144],[1.42,0.000282714],[1.425,0.000250823],[1.43,0.000250135],[1.435,0.000283382],[1.44,0.000296743],[1.445,0.000271076],[1.45,0.000295805],[1.455,0.000373938],[1.46,0.000272356],[1.465,0.000295671],[1.47,0.000296126],[1.475,0.000292749],[1.48,0.000341082],[1.485,0.000354427],[1.49,0.000343352],[1.495,0.000414559],[1.5,0.000464977],[1.505,0.000438281],[1.51,0.000508493],[1.515,0.000614853],[1.52,0.000591222],[1.525,0.000623411],[1.53,0.000787762],[1.535,0.000806396],[1.54,0.000779602],[1.545,0.000965624],[1.55,0.00109185]],"critical_angle_deg":0.25652,"bragg_peaks":[],"period_A":82.5,"n_periods":30}
+```
+
+**-> mcp__xrc__calc_reflectivity**
+```json
+{
+  "structure": {
+    "substrate": {
+      "material": "SiO2",
+      "density": 2.65,
+      "sigma": 3.8
+    },
+    "buffer": {
+      "material": "Ru",
+      "thickness": 200,
+      "sigma": 4,
+      "density": 11.5
+    },
+    "stacks": [
+      {
+        "N": 30,
+        "layers": [
+          {
+            "material": "Ru",
+            "thickness": 12,
+            "sigma": 4,
+            "density": 13.225
+          },
+          {
+            "material": "C",
+            "thickness": 70.5,
+            "sigma": 4,
+            "density": 2
+          }
+        ]
+      },
+      {
+        "N": 1,
+        "layers": [
+          {
+            "material": "C",
+            "thickness": 15,
+            "sigma": 3,
+            "density": 0.9
+          }
+        ]
+      }
+    ]
+  },
+  "lambda": 1.5406,
+  "polarization": "s",
+  "delta_theta": 0.012,
+  "theta_min": 0.15,
+  "theta_max": 6.3,
+  "points": 4100,
+  "max_inline_points": 1
+}
+```
+
+**<- result**
+```
+{"job_id":"calc-20260919-111500-6651","lambda_used":1.5406,"energy_eV":8047.79,"theta_unit":"deg theta","polarization":"s","delta_theta":0.012,"structure_used":{"substrate":{"material":"SiO2","sigma":3.8,"density":2.65},"stacks":[{"N":30,"layers":[{"material":"Ru","thickness":12,"sigma":4,"density":13.225},{"material":"C","thickness":70.5,"sigma":4,"density":2}]},{"N":1,"layers":[{"material":"C","thickness":15,"sigma":3,"density":0.9}]}],"buffer":{"material":"Ru","thickness":200,"sigma":4,"density":11.5}},"file":"jobs\\calc-20260919-111500-6651\\curve.dat","points":4100,"curve":null,"critical_angle_deg":0.265257,"bragg_peaks":[{"order":1,"theta_deg":0.586607,"r_peak":0.865432,"fwhm_deg":0.048161},{"order":2,"theta_deg":1.10123,"r_peak":0.670187,"fwhm_deg":0.0261748},{"order":3,"theta_deg":1.62786,"r_peak":0.273367,"fwhm_deg":0.0207099},{"order":4,"theta_deg":2.15749,"r_peak":0.0595455,"fwhm_deg":0.0191276},{"order":5,"theta_deg":2.69012,"r_peak":0.00692658,"fwhm_deg":0.0192725},{"order":6,"theta_deg":3.22425,"r_peak":0.000354016,"fwhm_deg":0.0190252},{"order":7,"theta_deg":3.75538,"r_peak":6.36938E-7,"fwhm_deg":0.0233148},{"order":8,"theta_deg":4.29251,"r_peak":1.18549E-5,"fwhm_deg":0.0186222},{"order":9,"theta_deg":4.82814,"r_peak":4.16146E-6,"fwhm_deg":0.0194399},{"order":10,"theta_deg":5.36527,"r_peak":7.03847E-7,"fwhm_deg":0.0198992}],"period_A":82.5,"n_periods":30}
+```
+
+**-> mcp__xrc__calc_reflectivity**
+```json
+{
+  "structure": {
+    "substrate": {
+      "material": "SiO2",
+      "density": 2.65,
+      "sigma": 3.8
+    },
+    "buffer": {
+      "material": "Ru",
+      "thickness": 200,
+      "sigma": 4,
+      "density": 11.5
+    },
+    "stacks": [
+      {
+        "N": 30,
+        "layers": [
+          {
+            "material": "Ru",
+            "thickness": 12,
+            "sigma": 4,
+            "density": 13.225
+          },
+          {
+            "material": "C",
+            "thickness": 70.5,
+            "sigma": 4,
+            "density": 2
+          }
+        ]
+      },
+      {
+        "N": 1,
+        "layers": [
+          {
+            "material": "C",
+            "thickness": 15,
+            "sigma": 3,
+            "density": 0.9
+          }
+        ]
+      }
+    ]
+  },
+  "lambda": 1.5406,
+  "polarization": "s",
+  "delta_theta": 0.012,
+  "theta_min": 1.2,
+  "theta_max": 1.55,
+  "points": 71
+}
+```
+
+**<- result**
+```
+{"job_id":"calc-20260919-111503-dd1f","lambda_used":1.5406,"energy_eV":8047.79,"theta_unit":"deg theta","polarization":"s","delta_theta":0.012,"structure_used":{"substrate":{"material":"SiO2","sigma":3.8,"density":2.65},"stacks":[{"N":30,"layers":[{"material":"Ru","thickness":12,"sigma":4,"density":13.225},{"material":"C","thickness":70.5,"sigma":4,"density":2}]},{"N":1,"layers":[{"material":"C","thickness":15,"sigma":3,"density":0.9}]}],"buffer":{"material":"Ru","thickness":200,"sigma":4,"density":11.5}},"file":"jobs\\calc-20260919-111503-dd1f\\curve.dat","points":71,"curve":[[1.2,0.00462235],[1.205,0.000820205],[1.21,0.00160033],[1.215,0.00385265],[1.22,0.0013634],[1.225,0.000559032],[1.23,0.00273694],[1.235,0.00166231],[1.24,0.000271354],[1.245,0.00175984],[1.25,0.00156134],[1.255,0.000281932],[1.26,0.00112845],[1.265,0.0013382],[1.27,0.000339648],[1.275,0.000824767],[1.28,0.00113914],[1.285,0.000317162],[1.29,0.000682255],[1.295,0.000607825],[1.3,0.000683326],[1.305,0.000687434],[1.31,0.000572729],[1.315,0.000647293],[1.32,0.00071832],[1.325,0.000590941],[1.33,0.000613658],[1.335,0.000739834],[1.34,0.000632357],[1.345,0.000566994],[1.35,0.000702549],[1.355,0.000659118],[1.36,0.000530852],[1.365,0.000628113],[1.37,0.000657673],[1.375,0.000504778],[1.38,0.00052013],[1.385,0.000604116],[1.39,0.000493248],[1.395,0.000427017],[1.4,0.000504961],[1.405,0.000469427],[1.41,0.000373723],[1.415,0.000403636],[1.42,0.000431973],[1.425,0.000372573],[1.43,0.000349648],[1.435,0.00039058],[1.44,0.000407394],[1.445,0.000375549],[1.45,0.000379183],[1.455,0.000462796],[1.46,0.000395191],[1.465,0.000395378],[1.47,0.000415752],[1.475,0.000401711],[1.48,0.00043012],[1.485,0.000474185],[1.49,0.00045587],[1.495,0.000498943],[1.5,0.000595857],[1.505,0.000581923],[1.51,0.000605617],[1.515,0.000763689],[1.52,0.000797342],[1.525,0.00077094],[1.53,0.000960943],[1.535,0.00109048],[1.54,0.00102149],[1.545,0.00117937],[1.55,0.00145782]],"critical_angle_deg":0.265257,"bragg_peaks":[],"period_A":82.5,"n_periods":30}
+```
+
+**-> mcp__xrc__calc_reflectivity**
+```json
+{
+  "structure": {
+    "substrate": {
+      "material": "SiO2",
+      "density": 2.65,
+      "sigma": 3.8
+    },
+    "buffer": {
+      "material": "Ru",
+      "thickness": 200,
+      "sigma": 4,
+      "density": 11.5
+    },
+    "stacks": [
+      {
+        "N": 30,
+        "layers": [
+          {
+            "material": "Ru",
+            "thickness": 12,
+            "sigma": 4,
+            "density": 9.775
+          },
+          {
+            "material": "C",
+            "thickness": 70.5,
+            "sigma": 4,
+            "density": 2
+          }
+        ]
+      },
+      {
+        "N": 1,
+        "layers": [
+          {
+            "material": "C",
+            "thickness": 15,
+            "sigma": 3,
+            "density": 0.9
+          }
+        ]
+      }
+    ]
+  },
+  "lambda": 1.5406,
+  "polarization": "s",
+  "delta_theta": 0.012,
+  "theta_min": 0.15,
+  "theta_max": 6.3,
+  "points": 4100,
+  "max_inline_points": 1
+}
+```
+
+**<- result**
+```
+{"job_id":"calc-20260919-111505-02a8","lambda_used":1.5406,"energy_eV":8047.79,"theta_unit":"deg theta","polarization":"s","delta_theta":0.012,"structure_used":{"substrate":{"material":"SiO2","sigma":3.8,"density":2.65},"stacks":[{"N":30,"layers":[{"material":"Ru","thickness":12,"sigma":4,"density":9.775},{"material":"C","thickness":70.5,"sigma":4,"density":2}]},{"N":1,"layers":[{"material":"C","thickness":15,"sigma":3,"density":0.9}]}],"buffer":{"material":"Ru","thickness":200,"sigma":4,"density":11.5}},"file":"jobs\\calc-20260919-111505-02a8\\curve.dat","points":4100,"curve":null,"critical_angle_deg":0.247475,"bragg_peaks":[{"order":1,"theta_deg":0.583606,"r_peak":0.832382,"fwhm_deg":0.0362756},{"order":2,"theta_deg":1.09823,"r_peak":0.506131,"fwhm_deg":0.022291},{"order":3,"theta_deg":1.62486,"r_peak":0.154286,"fwhm_deg":0.0198773},{"order":4,"theta_deg":2.15599,"r_peak":0.0303382,"fwhm_deg":0.018853},{"order":5,"theta_deg":2.68712,"r_peak":0.00337095,"fwhm_deg":0.0192255},{"order":6,"theta_deg":3.22275,"r_peak":0.000170448,"fwhm_deg":0.0188766},{"order":8,"theta_deg":4.29101,"r_peak":6.03624E-6,"fwhm_deg":0.0183893},{"order":9,"theta_deg":4.82664,"r_peak":2.01766E-6,"fwhm_deg":0.0195431},{"order":10,"theta_deg":5.36377,"r_peak":3.4287E-7,"fwhm_deg":0.021886}],"period_A":82.5,"n_periods":30}
+```
+
+**-> mcp__xrc__calc_reflectivity**
+```json
+{
+  "structure": {
+    "substrate": {
+      "material": "SiO2",
+      "density": 2.65,
+      "sigma": 3.8
+    },
+    "buffer": {
+      "material": "Ru",
+      "thickness": 200,
+      "sigma": 4,
+      "density": 11.5
+    },
+    "stacks": [
+      {
+        "N": 30,
+        "layers": [
+          {
+            "material": "Ru",
+            "thickness": 12,
+            "sigma": 4,
+            "density": 9.775
+          },
+          {
+            "material": "C",
+            "thickness": 70.5,
+            "sigma": 4,
+            "density": 2
+          }
+        ]
+      },
+      {
+        "N": 1,
+        "layers": [
+          {
+            "material": "C",
+            "thickness": 15,
+            "sigma": 3,
+            "density": 0.9
+          }
+        ]
+      }
+    ]
+  },
+  "lambda": 1.5406,
+  "polarization": "s",
+  "delta_theta": 0.012,
+  "theta_min": 1.2,
+  "theta_max": 1.55,
+  "points": 71
+}
+```
+
+**<- result**
+```
+{"job_id":"calc-20260919-111507-2872","lambda_used":1.5406,"energy_eV":8047.79,"theta_unit":"deg theta","polarization":"s","delta_theta":0.012,"structure_used":{"substrate":{"material":"SiO2","sigma":3.8,"density":2.65},"stacks":[{"N":30,"layers":[{"material":"Ru","thickness":12,"sigma":4,"density":9.775},{"material":"C","thickness":70.5,"sigma":4,"density":2}]},{"N":1,"layers":[{"material":"C","thickness":15,"sigma":3,"density":0.9}]}],"buffer":{"material":"Ru","thickness":200,"sigma":4,"density":11.5}},"file":"jobs\\calc-20260919-111507-2872\\curve.dat","points":71,"curve":[[1.2,0.000589286],[1.205,0.000530666],[1.21,0.00196244],[1.215,0.000874195],[1.22,0.000167912],[1.225,0.00144485],[1.23,0.00100377],[1.235,4.92176E-5],[1.24,0.0010352],[1.245,0.00105493],[1.25,4.43373E-5],[1.255,0.000726614],[1.26,0.00107853],[1.265,0.000111284],[1.27,0.000448187],[1.275,0.0010926],[1.28,0.000253215],[1.285,0.000240463],[1.29,0.00106531],[1.295,0.000501734],[1.3,0.000601284],[1.305,0.000506765],[1.31,0.000462713],[1.315,0.000571677],[1.32,0.00052219],[1.325,0.000429862],[1.33,0.000518644],[1.335,0.000523905],[1.34,0.000405095],[1.345,0.000438953],[1.35,0.000483774],[1.355,0.000374319],[1.36,0.000349772],[1.365,0.000410629],[1.37,0.000339265],[1.375,0.000269991],[1.38,0.000315148],[1.385,0.000294698],[1.39,0.000219438],[1.395,0.000231122],[1.4,0.000242064],[1.405,0.00019127],[1.41,0.000175323],[1.415,0.000190872],[1.42,0.000181965],[1.425,0.000168635],[1.43,0.00016819],[1.435,0.000188175],[1.44,0.000209647],[1.445,0.000195977],[1.45,0.00021407],[1.455,0.000285086],[1.46,0.000183489],[1.465,0.000212052],[1.47,0.000209384],[1.475,0.000207827],[1.48,0.00025888],[1.485,0.000268676],[1.49,0.000261849],[1.495,0.000334587],[1.5,0.000374834],[1.505,0.000352865],[1.51,0.000429614],[1.515,0.000516331],[1.52,0.000487901],[1.525,0.00053744],[1.53,0.000679584],[1.535,0.000671574],[1.54,0.000669456],[1.545,0.000846837],[1.55,0.000912917]],"critical_angle_deg":0.247475,"bragg_peaks":[],"period_A":82.5,"n_periods":30}
+```
+
+**-> mcp__xrc__calc_reflectivity**
+```json
+{
+  "structure": {
+    "substrate": {
+      "material": "SiO2",
+      "density": 2.65,
+      "sigma": 3.8
+    },
+    "buffer": {
+      "material": "Ru",
+      "thickness": 200,
+      "sigma": 4,
+      "density": 11.5
+    },
+    "stacks": [
+      {
+        "N": 30,
+        "layers": [
+          {
+            "material": "Ru",
+            "thickness": 12,
+            "sigma": 4,
+            "density": 11.5
+          },
+          {
+            "material": "C",
+            "thickness": 70.5,
+            "sigma": 4,
+            "density": 2.3
+          }
+        ]
+      },
+      {
+        "N": 1,
+        "layers": [
+          {
+            "material": "C",
+            "thickness": 15,
+            "sigma": 3,
+            "density": 0.9
+          }
+        ]
+      }
+    ]
+  },
+  "lambda": 1.5406,
+  "polarization": "s",
+  "delta_theta": 0.012,
+  "theta_min": 0.15,
+  "theta_max": 6.3,
+  "points": 4100,
+  "max_inline_points": 1
+}
+```
+
+**<- result**
+```
+{"job_id":"calc-20260919-111511-22e9","lambda_used":1.5406,"energy_eV":8047.79,"theta_unit":"deg theta","polarization":"s","delta_theta":0.012,"structure_used":{"substrate":{"material":"SiO2","sigma":3.8,"density":2.65},"stacks":[{"N":30,"layers":[{"material":"Ru","thickness":12,"sigma":4,"density":11.5},{"material":"C","thickness":70.5,"sigma":4,"density":2.3}]},{"N":1,"layers":[{"material":"C","thickness":15,"sigma":3,"density":0.9}]}],"buffer":{"material":"Ru","thickness":200,"sigma":4,"density":11.5}},"file":"jobs\\calc-20260919-111511-22e9\\curve.dat","points":4100,"curve":null,"critical_angle_deg":0.266513,"bragg_peaks":[{"order":1,"theta_deg":0.591108,"r_peak":0.844847,"fwhm_deg":0.040611},{"order":2,"theta_deg":1.10273,"r_peak":0.578724,"fwhm_deg":0.0237128},{"order":3,"theta_deg":1.62786,"r_peak":0.200302,"fwhm_deg":0.0201354},{"order":4,"theta_deg":2.15749,"r_peak":0.0409579,"fwhm_deg":0.018944},{"order":5,"theta_deg":2.69012,"r_peak":0.00463594,"fwhm_deg":0.019244},{"order":6,"theta_deg":3.22425,"r_peak":0.000235408,"fwhm_deg":0.0189294},{"order":7,"theta_deg":3.75538,"r_peak":4.64768E-7,"fwhm_deg":0.0257713},{"order":8,"theta_deg":4.29251,"r_peak":8.13445E-6,"fwhm_deg":0.018501},{"order":9,"theta_deg":4.82814,"r_peak":2.78111E-6,"fwhm_deg":0.0195},{"order":10,"theta_deg":5.36527,"r_peak":4.72497E-7,"fwhm_deg":0.0205947}],"period_A":82.5,"n_periods":30}
+```
+
+**-> mcp__xrc__calc_reflectivity**
+```json
+{
+  "structure": {
+    "substrate": {
+      "material": "SiO2",
+      "density": 2.65,
+      "sigma": 3.8
+    },
+    "buffer": {
+      "material": "Ru",
+      "thickness": 200,
+      "sigma": 4,
+      "density": 11.5
+    },
+    "stacks": [
+      {
+        "N": 30,
+        "layers": [
+          {
+            "material": "Ru",
+            "thickness": 12,
+            "sigma": 4,
+            "density": 11.5
+          },
+          {
+            "material": "C",
+            "thickness": 70.5,
+            "sigma": 4,
+            "density": 2.3
+          }
+        ]
+      },
+      {
+        "N": 1,
+        "layers": [
+          {
+            "material": "C",
+            "thickness": 15,
+            "sigma": 3,
+            "density": 0.9
+          }
+        ]
+      }
+    ]
+  },
+  "lambda": 1.5406,
+  "polarization": "s",
+  "delta_theta": 0.012,
+  "theta_min": 1.2,
+  "theta_max": 1.55,
+  "points": 71
+}
+```
+
+**<- result**
+```
+{"job_id":"calc-20260919-111513-cac7","lambda_used":1.5406,"energy_eV":8047.79,"theta_unit":"deg theta","polarization":"s","delta_theta":0.012,"structure_used":{"substrate":{"material":"SiO2","sigma":3.8,"density":2.65},"stacks":[{"N":30,"layers":[{"material":"Ru","thickness":12,"sigma":4,"density":11.5},{"material":"C","thickness":70.5,"sigma":4,"density":2.3}]},{"N":1,"layers":[{"material":"C","thickness":15,"sigma":3,"density":0.9}]}],"buffer":{"material":"Ru","thickness":200,"sigma":4,"density":11.5}},"file":"jobs\\calc-20260919-111513-cac7\\curve.dat","points":71,"curve":[[1.2,0.00330598],[1.205,0.000555985],[1.21,0.00115896],[1.215,0.00280992],[1.22,0.000916592],[1.225,0.000427751],[1.23,0.00209486],[1.235,0.00113977],[1.24,0.000178955],[1.245,0.00146157],[1.25,0.00113072],[1.255,0.000124901],[1.26,0.00101853],[1.265,0.00108604],[1.27,0.000134109],[1.275,0.000740747],[1.28,0.00105343],[1.285,0.000153429],[1.29,0.000536166],[1.295,0.000509134],[1.3,0.000576758],[1.305,0.000612323],[1.31,0.000491908],[1.315,0.000530875],[1.32,0.00062006],[1.325,0.000511907],[1.33,0.000492212],[1.335,0.000606557],[1.34,0.000534575],[1.345,0.000447782],[1.35,0.000546033],[1.355,0.000532561],[1.36,0.000413806],[1.365,0.000466126],[1.37,0.000502481],[1.375,0.000384604],[1.38,0.000372407],[1.385,0.000434917],[1.39,0.000360229],[1.395,0.000298628],[1.4,0.000344803],[1.405,0.000325074],[1.41,0.000258903],[1.415,0.000269365],[1.42,0.000285265],[1.425,0.000256194],[1.43,0.00024125],[1.435,0.000255551],[1.44,0.000278116],[1.445,0.000275361],[1.45,0.000262742],[1.455,0.000317739],[1.46,0.000266881],[1.465,0.000270497],[1.47,0.00029503],[1.475,0.000278705],[1.48,0.000299466],[1.485,0.000348059],[1.49,0.000332861],[1.495,0.000356413],[1.5,0.000445002],[1.505,0.000442606],[1.51,0.000445146],[1.515,0.000571324],[1.52,0.000614646],[1.525,0.000580786],[1.53,0.000714531],[1.535,0.000832571],[1.54,0.00077627],[1.545,0.00087047],[1.55,0.00108878]],"critical_angle_deg":0.266513,"bragg_peaks":[],"period_A":82.5,"n_periods":30}
+```
+
+**-> mcp__xrc__calc_reflectivity**
+```json
+{
+  "structure": {
+    "substrate": {
+      "material": "SiO2",
+      "density": 2.65,
+      "sigma": 3.8
+    },
+    "buffer": {
+      "material": "Ru",
+      "thickness": 200,
+      "sigma": 4,
+      "density": 11.5
+    },
+    "stacks": [
+      {
+        "N": 30,
+        "layers": [
+          {
+            "material": "Ru",
+            "thickness": 12,
+            "sigma": 4,
+            "density": 11.5
+          },
+          {
+            "material": "C",
+            "thickness": 70.5,
+            "sigma": 4,
+            "density": 1.7
+          }
+        ]
+      },
+      {
+        "N": 1,
+        "layers": [
+          {
+            "material": "C",
+            "thickness": 15,
+            "sigma": 3,
+            "density": 0.9
+          }
+        ]
+      }
+    ]
+  },
+  "lambda": 1.5406,
+  "polarization": "s",
+  "delta_theta": 0.012,
+  "theta_min": 0.15,
+  "theta_max": 6.3,
+  "points": 4100,
+  "max_inline_points": 1
+}
+```
+
+**<- result**
+```
+{"job_id":"calc-20260919-111516-b4c5","lambda_used":1.5406,"energy_eV":8047.79,"theta_unit":"deg theta","polarization":"s","delta_theta":0.012,"structure_used":{"substrate":{"material":"SiO2","sigma":3.8,"density":2.65},"stacks":[{"N":30,"layers":[{"material":"Ru","thickness":12,"sigma":4,"density":11.5},{"material":"C","thickness":70.5,"sigma":4,"density":1.7}]},{"N":1,"layers":[{"material":"C","thickness":15,"sigma":3,"density":0.9}]}],"buffer":{"material":"Ru","thickness":200,"sigma":4,"density":11.5}},"file":"jobs\\calc-20260919-111516-b4c5\\curve.dat","points":4100,"curve":null,"critical_angle_deg":0.246123,"bragg_peaks":[{"order":1,"theta_deg":0.580605,"r_peak":0.862562,"fwhm_deg":0.0440095},{"order":2,"theta_deg":1.09673,"r_peak":0.623465,"fwhm_deg":0.0245997},{"order":3,"theta_deg":1.62486,"r_peak":0.227606,"fwhm_deg":0.0203929},{"order":4,"theta_deg":2.15449,"r_peak":0.0473793,"fwhm_deg":0.0190403},{"order":5,"theta_deg":2.68712,"r_peak":0.00542423,"fwhm_deg":0.0192398},{"order":6,"theta_deg":3.22275,"r_peak":0.000274476,"fwhm_deg":0.0189962},{"order":7,"theta_deg":3.75238,"r_peak":5.41768E-7,"fwhm_deg":0.0240117},{"order":8,"theta_deg":4.29101,"r_peak":9.40407E-6,"fwhm_deg":0.0185452},{"order":9,"theta_deg":4.82664,"r_peak":3.24676E-6,"fwhm_deg":0.0194527},{"order":10,"theta_deg":5.36377,"r_peak":5.48501E-7,"fwhm_deg":0.0202796}],"period_A":82.5,"n_periods":30}
+```
+
+**-> mcp__xrc__calc_reflectivity**
+```json
+{
+  "structure": {
+    "substrate": {
+      "material": "SiO2",
+      "density": 2.65,
+      "sigma": 3.8
+    },
+    "buffer": {
+      "material": "Ru",
+      "thickness": 200,
+      "sigma": 4,
+      "density": 11.5
+    },
+    "stacks": [
+      {
+        "N": 30,
+        "layers": [
+          {
+            "material": "Ru",
+            "thickness": 12,
+            "sigma": 4,
+            "density": 11.5
+          },
+          {
+            "material": "C",
+            "thickness": 70.5,
+            "sigma": 4,
+            "density": 1.7
+          }
+        ]
+      },
+      {
+        "N": 1,
+        "layers": [
+          {
+            "material": "C",
+            "thickness": 15,
+            "sigma": 3,
+            "density": 0.9
+          }
+        ]
+      }
+    ]
+  },
+  "lambda": 1.5406,
+  "polarization": "s",
+  "delta_theta": 0.012,
+  "theta_min": 1.2,
+  "theta_max": 1.55,
+  "points": 71
+}
+```
+
+**<- result**
+```
+{"job_id":"calc-20260919-111518-a820","lambda_used":1.5406,"energy_eV":8047.79,"theta_unit":"deg theta","polarization":"s","delta_theta":0.012,"structure_used":{"substrate":{"material":"SiO2","sigma":3.8,"density":2.65},"stacks":[{"N":30,"layers":[{"material":"Ru","thickness":12,"sigma":4,"density":11.5},{"material":"C","thickness":70.5,"sigma":4,"density":1.7}]},{"N":1,"layers":[{"material":"C","thickness":15,"sigma":3,"density":0.9}]}],"buffer":{"material":"Ru","thickness":200,"sigma":4,"density":11.5}},"file":"jobs\\calc-20260919-111518-a820\\curve.dat","points":71,"curve":[[1.2,0.000878891],[1.205,0.000814682],[1.21,0.00289331],[1.215,0.00135504],[1.22,0.000244537],[1.225,0.00196429],[1.23,0.00150263],[1.235,0.00012866],[1.24,0.00125332],[1.245,0.00142464],[1.25,0.000170822],[1.255,0.000801692],[1.26,0.00126369],[1.265,0.000240144],[1.27,0.000508839],[1.275,0.00114432],[1.28,0.000310165],[1.285,0.00033269],[1.29,0.00109257],[1.295,0.000551519],[1.3,0.000633762],[1.305,0.000528342],[1.31,0.000519599],[1.315,0.000634488],[1.32,0.000557519],[1.325,0.000491703],[1.33,0.000614831],[1.335,0.00059376],[1.34,0.000475763],[1.345,0.000558092],[1.35,0.000595877],[1.355,0.000460549],[1.36,0.000473174],[1.365,0.000552307],[1.37,0.000445481],[1.375,0.000384918],[1.38,0.000464425],[1.385,0.0004214],[1.39,0.000325937],[1.395,0.000366835],[1.4,0.000379365],[1.405,0.000294921],[1.41,0.000283105],[1.415,0.000318122],[1.42,0.000288584],[1.425,0.000255167],[1.43,0.000272618],[1.435,0.000299364],[1.44,0.000293329],[1.445,0.000275079],[1.45,0.000321736],[1.455,0.000386784],[1.46,0.00028621],[1.465,0.000311097],[1.47,0.000304869],[1.475,0.000307954],[1.48,0.000360459],[1.485,0.000361862],[1.49,0.000363907],[1.495,0.000453246],[1.5,0.000485086],[1.505,0.000466483],[1.51,0.000578139],[1.515,0.000670225],[1.52,0.000631584],[1.525,0.000723855],[1.53,0.000903617],[1.535,0.00087863],[1.54,0.000907791],[1.545,0.00116261],[1.55,0.0012319]],"critical_angle_deg":0.246123,"bragg_peaks":[],"period_A":82.5,"n_periods":30}
+```
+
+> **thinking**
+> Buffer density variation mainly shifts the mid-peak level, ML Ru density affects order 1–5 heights and the critical angle, and C density mostly shifts the critical angle and order 1. Next I'll check the surface-layer density variants, the light-carbon variant, and the remaining edge windows.
+
+**-> mcp__xrc__calc_reflectivity**
+```json
+{
+  "structure": {
+    "substrate": {
+      "material": "SiO2",
+      "density": 2.65,
+      "sigma": 3.8
+    },
+    "buffer": {
+      "material": "Ru",
+      "thickness": 200,
+      "sigma": 4,
+      "density": 11.5
+    },
+    "stacks": [
+      {
+        "N": 30,
+        "layers": [
+          {
+            "material": "Ru",
+            "thickness": 12,
+            "sigma": 4,
+            "density": 11.5
+          },
+          {
+            "material": "C",
+            "thickness": 70.5,
+            "sigma": 4,
+            "density": 2
+          }
+        ]
+      },
+      {
+        "N": 1,
+        "layers": [
+          {
+            "material": "C",
+            "thickness": 15,
+            "sigma": 3,
+            "density": 1.035
+          }
+        ]
+      }
+    ]
+  },
+  "lambda": 1.5406,
+  "polarization": "s",
+  "delta_theta": 0.012,
+  "theta_min": 0.15,
+  "theta_max": 6.3,
+  "points": 4100,
+  "max_inline_points": 1
+}
+```
+
+**<- result**
+```
+{"job_id":"calc-20260919-111534-96c2","lambda_used":1.5406,"energy_eV":8047.79,"theta_unit":"deg theta","polarization":"s","delta_theta":0.012,"structure_used":{"substrate":{"material":"SiO2","sigma":3.8,"density":2.65},"stacks":[{"N":30,"layers":[{"material":"Ru","thickness":12,"sigma":4,"density":11.5},{"material":"C","thickness":70.5,"sigma":4,"density":2}]},{"N":1,"layers":[{"material":"C","thickness":15,"sigma":3,"density":1.035}]}],"buffer":{"material":"Ru","thickness":200,"sigma":4,"density":11.5}},"file":"jobs\\calc-20260919-111534-96c2\\curve.dat","points":4100,"curve":null,"critical_angle_deg":0.256687,"bragg_peaks":[{"order":1,"theta_deg":0.585106,"r_peak":0.85483,"fwhm_deg":0.0423464},{"order":2,"theta_deg":1.09973,"r_peak":0.601734,"fwhm_deg":0.024132},{"order":3,"theta_deg":1.62636,"r_peak":0.213504,"fwhm_deg":0.0202573},{"order":4,"theta_deg":2.15599,"r_peak":0.044045,"fwhm_deg":0.0189906},{"order":5,"theta_deg":2.68862,"r_peak":0.00502671,"fwhm_deg":0.019225},{"order":6,"theta_deg":3.22275,"r_peak":0.000254535,"fwhm_deg":0.0189536},{"order":7,"theta_deg":3.75388,"r_peak":5.17049E-7,"fwhm_deg":0.0245324},{"order":8,"theta_deg":4.29101,"r_peak":8.72456E-6,"fwhm_deg":0.0185535},{"order":9,"theta_deg":4.82664,"r_peak":2.98663E-6,"fwhm_deg":0.0195198},{"order":10,"theta_deg":5.36527,"r_peak":5.08126E-7,"fwhm_deg":0.0204614}],"period_A":82.5,"n_periods":30}
+```
+
+**-> mcp__xrc__calc_reflectivity**
+```json
+{
+  "structure": {
+    "substrate": {
+      "material": "SiO2",
+      "density": 2.65,
+      "sigma": 3.8
+    },
+    "buffer": {
+      "material": "Ru",
+      "thickness": 200,
+      "sigma": 4,
+      "density": 11.5
+    },
+    "stacks": [
+      {
+        "N": 30,
+        "layers": [
+          {
+            "material": "Ru",
+            "thickness": 12,
+            "sigma": 4,
+            "density": 11.5
+          },
+          {
+            "material": "C",
+            "thickness": 70.5,
+            "sigma": 4,
+            "density": 2
+          }
+        ]
+      },
+      {
+        "N": 1,
+        "layers": [
+          {
+            "material": "C",
+            "thickness": 15,
+            "sigma": 3,
+            "density": 1.035
+          }
+        ]
+      }
+    ]
+  },
+  "lambda": 1.5406,
+  "polarization": "s",
+  "delta_theta": 0.012,
+  "theta_min": 1.2,
+  "theta_max": 1.55,
+  "points": 71
+}
+```
+
+**<- result**
+```
+{"job_id":"calc-20260919-111538-085c","lambda_used":1.5406,"energy_eV":8047.79,"theta_unit":"deg theta","polarization":"s","delta_theta":0.012,"structure_used":{"substrate":{"material":"SiO2","sigma":3.8,"density":2.65},"stacks":[{"N":30,"layers":[{"material":"Ru","thickness":12,"sigma":4,"density":11.5},{"material":"C","thickness":70.5,"sigma":4,"density":2}]},{"N":1,"layers":[{"material":"C","thickness":15,"sigma":3,"density":1.035}]}],"buffer":{"material":"Ru","thickness":200,"sigma":4,"density":11.5}},"file":"jobs\\calc-20260919-111538-085c\\curve.dat","points":71,"curve":[[1.2,0.00210386],[1.205,0.000193374],[1.21,0.00216486],[1.215,0.00227436],[1.22,0.000218757],[1.225,0.00114715],[1.23,0.00201155],[1.235,0.000418251],[1.24,0.000587622],[1.245,0.00161701],[1.25,0.000531904],[1.255,0.000311931],[1.26,0.00126831],[1.265,0.00061175],[1.27,0.00016249],[1.275,0.00103431],[1.28,0.000677633],[1.285,8.38201E-5],[1.29,0.000875178],[1.295,0.000492713],[1.3,0.000596629],[1.305,0.000552144],[1.31,0.000465381],[1.315,0.000568982],[1.32,0.000579733],[1.325,0.000465009],[1.33,0.000534252],[1.335,0.000599329],[1.34,0.00047734],[1.345,0.00047645],[1.35,0.000570066],[1.355,0.000478554],[1.36,0.000413556],[1.365,0.000504201],[1.37,0.000465836],[1.375,0.000356578],[1.38,0.00040525],[1.385,0.000425091],[1.39,0.000323223],[1.395,0.000314774],[1.4,0.000357592],[1.405,0.000298258],[1.41,0.000252945],[1.415,0.000283591],[1.42,0.000279289],[1.425,0.000243363],[1.43,0.000242902],[1.435,0.000267743],[1.44,0.000280437],[1.445,0.000263128],[1.45,0.000276442],[1.455,0.000350041],[1.46,0.00026277],[1.465,0.000282071],[1.47,0.000291638],[1.475,0.000278766],[1.48,0.000322494],[1.485,0.000349652],[1.49,0.00033219],[1.495,0.000395405],[1.5,0.000464614],[1.505,0.000438986],[1.51,0.000496312],[1.515,0.000623317],[1.52,0.000613188],[1.525,0.000629342],[1.53,0.000809298],[1.535,0.000854607],[1.54,0.000813748],[1.545,0.00100518],[1.55,0.00116905]],"critical_angle_deg":0.256687,"bragg_peaks":[],"period_A":82.5,"n_periods":30}
+```
+
+**-> mcp__xrc__calc_reflectivity**
+```json
+{
+  "structure": {
+    "substrate": {
+      "material": "SiO2",
+      "density": 2.65,
+      "sigma": 3.8
+    },
+    "buffer": {
+      "material": "Ru",
+      "thickness": 200,
+      "sigma": 4,
+      "density": 11.5
+    },
+    "stacks": [
+      {
+        "N": 30,
+        "layers": [
+          {
+            "material": "Ru",
+            "thickness": 12,
+            "sigma": 4,
+            "density": 11.5
+          },
+          {
+            "material": "C",
+            "thickness": 70.5,
+            "sigma": 4,
+            "density": 2
+          }
+        ]
+      },
+      {
+        "N": 1,
+        "layers": [
+          {
+            "material": "C",
+            "thickness": 15,
+            "sigma": 3,
+            "density": 1.035
+          }
+        ]
+      }
+    ]
+  },
+  "lambda": 1.5406,
+  "polarization": "s",
+  "delta_theta": 0.012,
+  "theta_min": 0.15,
+  "theta_max": 0.4,
+  "points": 51
+}
+```
+
+**<- result**
+```
+Connection closed
+```

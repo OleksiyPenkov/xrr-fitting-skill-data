@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="440" viewBox="0 0 1100 440" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="ah" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,4 L0,8 z" fill="#333"/>
+    </marker>
+  </defs>
+  <rect width="1100" height="440" fill="white"/>
+  <text x="550" y="34" text-anchor="middle" font-size="16" fill="#111">Figure 1. The three parties of the qualification and what crosses each boundary.</text>
+
+  <!-- boxes -->
+  <rect x="30" y="140" width="290" height="170" fill="#f2f2f2" stroke="#333" stroke-width="1.5"/>
+  <text x="175" y="205" text-anchor="middle" font-size="15" fill="#111">Expert (O.P.)</text>
+  <text x="175" y="228" text-anchor="middle" font-size="13" fill="#111">fits in the desktop program,</text>
+  <text x="175" y="248" text-anchor="middle" font-size="13" fill="#111">sets the tolerances, judges</text>
+
+  <rect x="405" y="140" width="290" height="170" fill="#f2f2f2" stroke="#333" stroke-width="1.5"/>
+  <text x="550" y="205" text-anchor="middle" font-size="15" fill="#111">Orchestrator</text>
+  <text x="550" y="228" text-anchor="middle" font-size="13" fill="#111">writes the skill, runs the</text>
+  <text x="550" y="248" text-anchor="middle" font-size="13" fill="#111">qualification, compares</text>
+
+  <rect x="780" y="140" width="290" height="170" fill="#f2f2f2" stroke="#333" stroke-width="1.5"/>
+  <text x="925" y="205" text-anchor="middle" font-size="15" fill="#111">Agent (the experiment's session)</text>
+  <text x="925" y="228" text-anchor="middle" font-size="13" fill="#111">fits with the tool server,</text>
+  <text x="925" y="248" text-anchor="middle" font-size="13" fill="#111">designs, deposits</text>
+
+  <!-- expert <-> orchestrator -->
+  <line x1="322" y1="185" x2="403" y2="185" stroke="#333" stroke-width="1.5" marker-end="url(#ah)"/>
+  <text x="362" y="112" text-anchor="middle" font-size="12" fill="#111">procedure, step by step;</text>
+  <text x="362" y="128" text-anchor="middle" font-size="12" fill="#111">reference fits (withheld)</text>
+  <line x1="403" y1="265" x2="322" y2="265" stroke="#333" stroke-width="1.5" marker-end="url(#ah)"/>
+  <text x="362" y="338" text-anchor="middle" font-size="12" fill="#111">comparisons; skill text</text>
+
+  <!-- orchestrator <-> agent -->
+  <line x1="697" y1="185" x2="778" y2="185" stroke="#333" stroke-width="1.5" marker-end="url(#ah)"/>
+  <text x="737" y="112" text-anchor="middle" font-size="12" fill="#111">the skill as a numbered</text>
+  <text x="737" y="128" text-anchor="middle" font-size="12" fill="#111">intervention; the verdict</text>
+  <line x1="778" y1="265" x2="697" y2="265" stroke="#333" stroke-width="1.5" marker-end="url(#ah)"/>
+  <text x="737" y="338" text-anchor="middle" font-size="12" fill="#111">section-13 reports; job files</text>
+
+  <text x="550" y="395" text-anchor="middle" font-size="12.5" font-style="italic" fill="#111">The agent never sees the expert's fits or the tolerances; the expert never edits the skill text;</text>
+  <text x="550" y="414" text-anchor="middle" font-size="12.5" font-style="italic" fill="#111">the tool server (X-Ray Calc 3 over MCP) is shared by all three.</text>
+</svg>

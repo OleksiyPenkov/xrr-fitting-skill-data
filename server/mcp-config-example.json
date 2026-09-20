@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "xrc": {
+      "type": "stdio",
+      "command": "D:\\DelphiProjects\\X-RayCalc\\X-RayCalc3_Working\\_Out\\BIN\\XRC_MCP.exe",
+      "args": [
+        "--workdir",
+        "D:\\MultilayerLab\\Papers\\LLM-XRay-Optics-Lab\\experiments\\skill-dev-2026-09-18\\workdir-RuC-260511B-a"
+      ],
+      "env": {}
+    }
+  }
+}

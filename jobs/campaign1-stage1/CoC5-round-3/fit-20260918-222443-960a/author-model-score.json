@@ -1,0 +1,110 @@
+{
+ "session_job": "fit-20260918-222443-960a",
+ "reference": "author-fit-P2-05-Manual-2026-09-18.xrcx",
+ "results": [
+  {
+   "label": "author model, session weights",
+   "job": "fit-20260919-082318-4d9e",
+   "chi2_start": 5.4854,
+   "chi2_after_1_iter": 5.4854,
+   "period_A": 50.0318,
+   "orders_start": [
+    [
+     1,
+     0.96075
+    ],
+    [
+     2,
+     1.29802
+    ],
+    [
+     3,
+     1.02814
+    ],
+    [
+     4,
+     0.736358
+    ]
+   ],
+   "error": null
+  },
+  {
+   "label": "session model, session weights",
+   "job": "fit-20260919-082318-43d5",
+   "chi2_start": 3.59731,
+   "chi2_after_1_iter": 3.59731,
+   "period_A": 50.141,
+   "orders_start": [
+    [
+     1,
+     0.937474
+    ],
+    [
+     2,
+     1.1917
+    ],
+    [
+     3,
+     1.10878
+    ],
+    [
+     4,
+     0.756788
+    ]
+   ],
+   "error": null
+  },
+  {
+   "label": "author model, theta_weight 0",
+   "job": "fit-20260919-082318-3e97",
+   "chi2_start": 1.62484,
+   "chi2_after_1_iter": 1.61584,
+   "period_A": 50.0318,
+   "orders_start": [
+    [
+     1,
+     0.96075
+    ],
+    [
+     2,
+     1.29802
+    ],
+    [
+     3,
+     1.02814
+    ],
+    [
+     4,
+     0.736358
+    ]
+   ],
+   "error": null
+  },
+  {
+   "label": "session model, theta_weight 0",
+   "job": "fit-20260919-082318-3e2b",
+   "chi2_start": 1.19484,
+   "chi2_after_1_iter": 1.19484,
+   "period_A": 50.141,
+   "orders_start": [
+    [
+     1,
+     0.937474
+    ],
+    [
+     2,
+     1.1917
+    ],
+    [
+     3,
+     1.10878
+    ],
+    [
+     4,
+     0.756788
+    ]
+   ],
+   "error": null
+  }
+ ]
+}

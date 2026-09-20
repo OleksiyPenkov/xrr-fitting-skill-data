@@ -1,0 +1,8 @@
+SERVER git_revision = 06035de
+JOB fit-20260916-164102-9b13 chi2 2.16926 out_of_bounds []
+[FIT] job vs project: IDENTICAL   project [FIT] = {'Namx': '150', 'Pop': '100', 'Mode': '1', 'PolyOrder': '1', 'PWChi': '1', 'TWChi': '1', 'Window': '0.05', 'Tol': '0.005'}
+[LFPSO] job vs project: IDENTICAL   project [LFPSO] = {'Vmax': '0.3', 'Jmax': '1', 'RIMax': '3', 'kChi': '1.41', 'kVmax': '1.41', 'w1': '0.3', 'w2': '0.3', 'AdaptV': '0', 'Constriction': '1', 'Shake': '1', 'SeedRange': '0', 'Smooth': '0', 'SmoothWindow': '-1', 'Ksxr': '0.1', 'PolyFactor': '10'}
+[PARAMS] job vs project: IDENTICAL   project [PARAMS] = {'N': '946', 'Mode': '0', 'Polarisation': '1', 'MinLimit': '1E-7'}
+[ANGLE] job vs project: IDENTICAL   project [ANGLE] = {'Start': '0.30125', 'End': '1.71875', 'lambbda': '1.540598', 'width': '0.015', '2teta': '0'}
+inbox + N20 stack: [FIT] = {'Namx': '100', 'Pop': '1000', 'Mode': '1', 'PolyOrder': '1', 'PWChi': '1', 'TWChi': '0', 'Window': '0.05', 'Tol': '0.005'}
+single layer, no curve: [FIT] = {'Namx': '100', 'Pop': '1000', 'Mode': '0', 'PolyOrder': '1', 'PWChi': '1', 'TWChi': '0', 'Window': '0.05', 'Tol': '0.005'}
